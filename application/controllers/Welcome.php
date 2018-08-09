@@ -5,12 +5,16 @@ class Welcome extends CI_Controller {
 		parent ::__construct();
 	}
 
-	public function home(){
-		$this->load->view('templates/index');
+	//untuk admin
+	public function index(){
+		$data['contents'] = 'admin/dashboard';
+		$this->load->view('templates/admin/index',$data);
 	}
 
-	public function index()
-	{
-		$this->load->view('templates/index');
+	//untuk Peserta
+	public function peserta(){
+		$data['contents'] = 'peserta/dashboard';
+		$this->load->view('templates/peserta/index',$data);
 	}
+
 }
