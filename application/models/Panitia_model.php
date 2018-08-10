@@ -9,12 +9,12 @@ class Panitia_model extends CI_Model {
 	
 	public function insert(){
 		$id_jadwal = $this->input->post('id_jadwal');
-		$nama = $this->input->post('nama');
+		$nama_panitia = $this->input->post('nama_panitia');
 		$status = $this->input->post('status');
 	
 	$data = array(
 					'id_jadwal'=>$id_jadwal,
-					'nama'=>$nama,
+					'nama_panitia'=>$nama_panitia,
 					'status'=>$status,
 			);
 	$this->db->insert('panitia', $data);
@@ -29,12 +29,12 @@ class Panitia_model extends CI_Model {
 	public function edit(){
 		$id = $this->input->post('id');
 		$id_jadwal = $this->input->post('id_jadwal');
-		$nama = $this->input->post('nama');
+		$nama_panitia = $this->input->post('nama_panitia');
 		$status = $this->input->post('status');
 
 		$data = array(
 					'id_jadwal'=>$id_jadwal,
-					'nama'=>$nama,
+					'nama_panitia'=>$nama_panitia,
 					'status'=>$status,
 		);
 		$this->db->where('id',$id);

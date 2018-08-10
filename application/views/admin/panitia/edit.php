@@ -27,7 +27,7 @@
 											<span>Nama : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control" style="font-size: 12px;" value="<?php echo $panitia['nama'] ?>">
+											<input type="text" name="nama_panitia" class="form-control" style="font-size: 12px;" value="<?php echo $panitia['nama_panitia'] ?>">
 										</div>
 									</div>
 									<br>

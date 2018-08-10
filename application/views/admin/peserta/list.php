@@ -24,8 +24,8 @@
 						<tr>
 							<td><?php echo $no++ ?></td>
 							<td><?php echo $data->kode_pendaftaran ?></td>
-							<td><?php echo $data->nama ?></td>
-							<td><?php echo $data->id_jurusan ?></td>
+							<td><?php echo $data->nama_peserta ?></td>
+							<td><?php echo $data->jurusan ?></td>
 							<td><?php echo $data->id_panitia ?></td>
 							<td><?php echo $data->id_jadwal ?></td>
 							<td><?php echo $data->jenkel ?></td>

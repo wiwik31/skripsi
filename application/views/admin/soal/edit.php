@@ -21,7 +21,7 @@
 												<?php $matauji = $this->Soal_model->getlistmatauji();
 												 ?>
 												 <?php foreach ($matauji as $key) { ?>
-												 	<option value="<?php echo $key->id ?>"><?php echo $key->nama; ?></option>
+												 	<option value="<?php echo $key->id ?>"><?php echo $key->nama_matauji; ?></option>
 												 <?php } ?>
 											</select>
 											<!-- <input type="text" name="id_matauji" class="form-control " style="font-size: 12px;" value="<?php echo $soal['id_matauji'] ?>" > -->

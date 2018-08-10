@@ -25,12 +25,17 @@
 											<span>Nama Peserta : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control" style="font-size: 12px;">
+											<input type="text" name="nama_peserta" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
+											<select>
+												<?php foreach ($kelompok_data as $key) {
+													# code...
+												} ?>
+											</select>
 											<span>Jurusan : </span>
 										</div>
 										<div class="col-md-12">

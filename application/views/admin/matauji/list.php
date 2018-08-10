@@ -17,7 +17,7 @@
 					<?php $no = 1; foreach ($kelompok_data as $data): ?>
 						<tr>
 							<td><?php echo $no++ ?></td>
-							<td><?php echo $data->nama ?></td>
+							<td><?php echo $data->nama_matauji ?></td>
 							<td><?php echo $data->status ?></td>
 							<td  style="text-align: center; width: 200px;">
 								<a href="<?php echo site_url('/matauji/edit/').$data->id ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-edit"></i> Edit</a>

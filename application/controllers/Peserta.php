@@ -6,6 +6,7 @@ class Peserta extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Peserta_model'); //load model Peserta
+		$this->load->model('Jurusan_model'); 
 	}
 	
 	public function index()

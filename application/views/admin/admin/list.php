@@ -19,7 +19,7 @@
 					<?php $no = 1; foreach ($kelompok_data as $data): ?>
 						<tr>
 							<td><?php echo $no++ ?></td>
-							<td><?php echo $data->nama ?></td>
+							<td><?php echo $data->nama_admin ?></td>
 							<td><?php echo $data->email ?></td>
 							<td><?php echo $data->username ?></td>
 							<td><?php echo $data->status ?></td>

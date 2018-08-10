@@ -8,7 +8,7 @@ class Admin_model extends CI_Model {
 	}
 	
 	public function insert(){
-		$nama = $this->input->post('nama');
+		$nama_admin = $this->input->post('nama_admin');
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -16,7 +16,7 @@ class Admin_model extends CI_Model {
 		$status = $this->input->post('status');
 	
 	$data = array(
-					'nama'=>$nama,
+					'nama_admin'=>$nama_admin,
 					'email'=>$email,
 					'username'=>$username,
 					'password'=>$password,
@@ -34,7 +34,7 @@ class Admin_model extends CI_Model {
 
 	public function edit(){
 		$id = $this->input->post('id');
-		$nama = $this->input->post('nama');
+		$nama_admin = $this->input->post('nama_admin');
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -42,7 +42,7 @@ class Admin_model extends CI_Model {
 		$status = $this->input->post('status');
 
 		$data = array(
-					'nama'=>$nama,
+					'nama_admin'=>$nama_admin,
 					'email'=>$email,
 					'username'=>$username,
 					'password'=>$password,

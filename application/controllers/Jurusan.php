@@ -8,6 +8,13 @@ class Jurusan extends CI_Controller {
 		$this->load->model('Jurusan_model'); //load model jurusan
 	}
 	
+	public function jurusan(){
+		$data['title'] = "jurusan" ;
+
+		$this->load->view('jurusan' , $data);
+	}
+
+
 	public function index()
 	{
 		$data['contents'] = 'admin/jurusan/list'; 

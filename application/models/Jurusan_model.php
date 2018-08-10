@@ -18,12 +18,12 @@
 
 		public function insert(){
 			$kode = $this->input->post('kode');
-			$nama = $this->input->post('nama');
+			$jurusan = $this->input->post('jurusan');
 			$jumlah_peserta = $this->input->post('jumlah_peserta');
 
 			$data = array(
 				'kode' => $kode,
-				'nama' => $nama,
+				'jurusan' => $jurusan,
 				'jumlah_peserta' => $jumlah_peserta,
 			);
 
@@ -39,12 +39,12 @@
 		public function edit(){
 		$id = $this->input->post('id');
 		$kode = $this->input->post('kode');
-		$nama = $this->input->post('nama');
+		$jurusan = $this->input->post('jurusan');
 		$jumlah_peserta = $this->input->post('jumlah_peserta');
 
 		$data = array(
 					'kode'=>$kode,
-					'nama'=>$nama,
+					'jurusan'=>$jurusan,
 					'jumlah_peserta'=>$jumlah_peserta,
 		);
 		$this->db->where('id',$id);

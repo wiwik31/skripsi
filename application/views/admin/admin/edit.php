@@ -17,7 +17,7 @@
 											<span>Nama : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control" style="font-size: 12px;" value="<?php echo $admin['nama'] ?>">
+											<input type="text" name="nama_admin" class="form-control" style="font-size: 12px;" value="<?php echo $admin['nama_admin'] ?>">
 										</div>
 									</div>
 									<br>

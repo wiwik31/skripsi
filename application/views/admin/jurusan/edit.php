@@ -26,7 +26,7 @@
 											<span>Nama Jurusan : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control" style="font-size: 12px;" value="<?php echo $jurusan['nama'] ?>">
+											<input type="text" name="jurusan" class="form-control" style="font-size: 12px;" value="<?php echo $jurusan['jurusan'] ?>">
 										</div>
 									</div>
 									<br>

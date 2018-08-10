@@ -18,7 +18,7 @@
 											<span>Nama Penyakit : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control" style="font-size: 12px;" value="<?php echo $matauji['nama'] ?>">
+											<input type="text" name="nama_matauji" class="form-control" style="font-size: 12px;" value="<?php echo $matauji['nama_matauji'] ?>">
 										</div>
 									</div>
 									<br>

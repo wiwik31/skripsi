@@ -16,7 +16,7 @@
 											<span>Nama Mata Ujian : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control" style="font-size: 12px;">
+											<input type="text" name="nama_matauji" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
 									<br>

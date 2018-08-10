@@ -27,7 +27,7 @@
 											<span >Nama Peserta : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['nama'] ?>" >
+											<input type="text" name="nama_peserta" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['nama_peserta'] ?>" >
 										</div>
 									</div>
 									<br>
@@ -37,7 +37,14 @@
 											<span >Jurusan : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="id_jurusan" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['id_jurusan'] ?>" >
+											<select name="id_jurusan" class="form-control">
+												<?php $jurusan = $this->Peserta_model->getlistjurusan(); ?>
+												<?php foreach ($jurusan as $key) {?> 
+													<option value="<?php echo $key->id ?>"><?php echo $key->jurusan; ?></option>
+													
+												<?php } ?>
+											</select>
+											<!-- <input type="text" name="id_jurusan" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['id_jurusan'] ?>" > -->
 										</div>
 									</div>
 									<br>

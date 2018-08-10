@@ -22,7 +22,7 @@
 
 												?>
 												<?php foreach ($matauji->result() as $key){ ?>
-													<option value="<?php echo $key->id ?>"><?php echo $key->nama; ?></option>
+													<option value="<?php echo $key->id ?>"><?php echo $key->nama_matauji; ?></option>
 												<?php } ?> 
 											
 											</select>
