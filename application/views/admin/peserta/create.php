@@ -31,11 +31,6 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<select>
-												<?php foreach ($kelompok_data as $key) {
-													# code...
-												} ?>
-											</select>
 											<span>Jurusan : </span>
 										</div>
 										<div class="col-md-12">
