@@ -42,7 +42,7 @@ class Login_peserta extends CI_Controller {
 				);
 				$this->session->set_userdata($data);
 				//ini pemanggilan function dashboard nah
-				redirect('dashboard');
+				redirect('login_peserta/dashboard');
 			}
 		}
 	}

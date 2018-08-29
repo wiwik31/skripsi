@@ -53,7 +53,7 @@
 			$no_telp = $this->input->post('no_telp');
 			$email = $this->input->post('email');
 			$username = $this->input->post('username');
-			$password = $this->input->post('password');
+			$password = md5($this->input->post('password'));
 			$status = $this->input->post('status');
 
 			$data = array(

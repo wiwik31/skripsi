@@ -16,7 +16,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <!-- <center><button class="btn btn-danger">LOGIN</button></center> -->
         <li>
-          <a href="<?php echo site_url() ?>/home">
+          <a href="<?php echo site_url() ?>/login_peserta">
             <i class="fa fa-home"></i> <span>Home</span>
           </a>
         </li>

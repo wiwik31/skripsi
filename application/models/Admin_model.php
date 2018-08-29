@@ -11,7 +11,7 @@ class Admin_model extends CI_Model {
 		$nama_admin = $this->input->post('nama_admin');
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
-		$password = $this->input->post('password');
+		$password = md5($this->input->post('password'));
 		$image = $this->input->post('image');
 		$status = $this->input->post('status');
 	
