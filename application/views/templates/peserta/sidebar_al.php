@@ -26,10 +26,21 @@
             <i class="fa fa-calendar"></i> <span>Jadwal Ujian</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo site_url() ?>home/ujian">
+            <i class="fa fa-question-circle"></i> Mulai Ujian
+          </a>
+        </li>
 
          <li>
           <a href="<?php echo site_url() ?>/welcome/kontak">
             <i class="fa fa-phone"></i> <span>Info Kontak</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="">
+            <i class="fa fa-sign-out"></i> <span>Log out</span>
           </a>
         </li>
 

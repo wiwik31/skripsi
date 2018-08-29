@@ -20,14 +20,12 @@
 			$jadwal = $this->input->post('jadwal');
 			$waktu = $this->input->post('waktu');
 			$tgl = $this->input->post('tgl');
-			$status = $this->input->post('status');
 
 
 			$data = array(
 				'jadwal' => $jadwal,
 				'waktu' => $waktu,
 				'tgl' => $tgl,
-				'status' => $status,
 				
 			);
 
@@ -45,14 +43,12 @@
 		$jadwal = $this->input->post('jadwal');
 		$waktu = $this->input->post('waktu');
 		$tgl = $this->input->post('tgl');
-		$status = $this->input->post('status');
 
 
 		$data = array(
 					'jadwal' => $jadwal,
 					'waktu' => $waktu,
 					'tgl' => $tgl,
-					'status' => $status,
 
 		);
 		$this->db->where('id',$id);
@@ -62,6 +58,13 @@
 	public function hapus($id){
 		$this->db->where('id', $id);
 		$this->db->delete('jadwal');
+	}
+
+	//UNTUK PESERTA
+	public function t_jadwal(){
+			return $this->db->get('jadwal')->result();
+		
+
 	}
 		
 }

@@ -10,7 +10,7 @@
 				<thead>
 					<th>No</th>
 					<th>Nama Mata Ujian</th>
-					<th>Status</th>
+					<!-- <th>Status</th> -->
 				</thead>
 
 				<tbody>
@@ -18,7 +18,7 @@
 						<tr>
 							<td><?php echo $no++ ?></td>
 							<td><?php echo $data->nama_matauji ?></td>
-							<td><?php echo $data->status ?></td>
+							<!-- <td><?php echo $data->status ?></td> -->
 							<td  style="text-align: center; width: 200px;">
 								<a href="<?php echo site_url('/matauji/edit/').$data->id ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-edit"></i> Edit</a>
 								<a href="<?php echo site_url('/matauji/hapus/').$data->id ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i> Hapus</a>

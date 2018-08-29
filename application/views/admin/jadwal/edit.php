@@ -39,14 +39,6 @@
 										</div>
 									</div>
 									<br>
-									<div class="row">
-										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Status : </span>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="status" class="form-control" style="font-size: 12px;" value="<?php echo $jadwal['status'] ?>">
-										</div>
-									</div>
 									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677b; border-color: #51677b;">Update</button>
 									<a href="<?php echo site_url('/jadwal/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>

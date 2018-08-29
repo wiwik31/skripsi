@@ -41,34 +41,7 @@
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul> -->
         </li>
-
         <li class=" treeview">
-          <a href="#">
-            <i class="fa fa-gears"></i> <span>Ujian</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo site_url() ?>/jurusan"><i class="fa fa-circle-o"></i> Jurusan</a></li>
-            <li><a href="<?php echo site_url() ?>/matauji"><i class="fa fa-circle-o"></i> Mata Ujian</a></li>
-            <li><a href="<?php echo site_url() ?>/jadwal"><i class="fa fa-circle-o"></i> Jadwal Ujian</a></li>
-            <li><a href="<?php echo site_url() ?>/soal"><i class="fa fa-circle-o"></i> Soal Ujian</a></li>
-          </ul>
-        </li>
-        <li class=" treeview">
-          <a href="#">
-            <i class="fa fa-gears"></i> <span>Data</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo site_url() ?>/jurusan"><i class="fa fa-circle-o"></i> Hasil Ujian</a></li>
-            <li><a href="<?php echo site_url() ?>/matauji"><i class="fa fa-circle-o"></i> Laporan</a></li>
-          </ul>
-        </li>
-         <li class=" treeview">
           <a href="#">
             <i class="fa fa-user"></i> <span>User</span>
             <span class="pull-right-container">
@@ -84,7 +57,28 @@
         </li>
         <li class=" treeview">
           <a href="#">
-            <i class="fa fa-sign-out"></i> <span>Logout</span>
+            <i class="fa fa-gears"></i> <span>Ujian</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo site_url() ?>/jurusan"><i class="fa fa-circle-o"></i> Jurusan</a></li>
+            <li><a href="<?php echo site_url() ?>/matauji"><i class="fa fa-circle-o"></i> Mata Ujian</a></li>
+            <li><a href="<?php echo site_url() ?>/jadwal"><i class="fa fa-circle-o"></i> Jadwal Ujian</a></li>
+            <li><a href="<?php echo site_url() ?>/soal"><i class="fa fa-circle-o"></i> Soal Ujian</a></li>
+          </ul>
+        </li>
+        <li class=" treeview">
+          <li><a href="<?php echo site_url() ?>/ujian"><i class="fa fa-tasks"></i> Hasil Ujian</a></li>
+          </a>
+        </li>
+        <li class=" treeview">
+          <li><a href="<?php echo site_url() ?>/laporan"><i class="fa fa-file"></i> Laporan</a></li>
+          </a>
+        </li>
+        <li class=" treeview">
+          <a href="<?php echo site_url() ?>/login_admin/logout"><i class="fa fa-sign-out"></i> <span>Logout</span>
           </a>
         </li>
 

@@ -8,8 +8,7 @@ class Jadwal extends CI_Controller {
 		$this->load->model('Jadwal_model'); //load model jadwal
 	}
 	
-	public function index()
-	{
+	public function index(){
 		$data['contents'] = 'admin/jadwal/list'; 
 		$data['kelompok_data'] = $this->Jadwal_model->daftarJadwal();
 		$this->load->view('templates/admin/index', $data);

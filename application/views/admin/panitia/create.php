@@ -13,12 +13,28 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span>Jadwal</span>
+										</div>
+										<div class="col-md-12">
+											<select name="id_jadwal" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $jadwal = $this->Panitia_model->getlistjadwal();
+
+												?>
+												<?php foreach ($jadwal->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->jadwal; ?></option>
+												<?php } ?> 
+											</select>
+										</div>
+									</div>
+									<!-- <div class="row">
+										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span>jadwal : </span>
 										</div>
 										<div class="col-md-12">
 											<input type="text" name="id_jadwal" class="form-control " style="font-size: 12px;">
 										</div>
-									</div>
+									</div> -->
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
@@ -26,15 +42,6 @@
 										</div>
 										<div class="col-md-12">
 											<input type="text" name="nama_panitia" class="form-control" style="font-size: 12px;">
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Status : </span>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="status" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
 									<br>

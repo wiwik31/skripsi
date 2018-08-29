@@ -6,13 +6,14 @@ class Peserta extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Peserta_model'); //load model Peserta
-		$this->load->model('Jurusan_model'); 
+		// $this->load->model('Jurusan_model'); 
 	}
 	
 	public function index()
 	{
 		$data['contents'] = 'admin/peserta/list'; 
 		$data['kelompok_data'] = $this->Peserta_model->daftarPeserta();
+		// $data['kelompok_data'] = $this->Jurusan_model->daftarJurusan();
 		$this->load->view('templates/admin/index', $data);
 	}
 

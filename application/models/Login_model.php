@@ -11,4 +11,9 @@ class Login_model extends CI_Model {
 		return $this->db->query(" SELECT * FROM admin WHERE username='$username' AND password='$password' ")->row();
 	}
 
+	public function checkLoginpeserta($username, $password)
+	{
+		return $this->db->query(" SELECT * FROM peserta WHERE username='$username' AND password='$password' ")->row();
+	}
+
 }

@@ -17,4 +17,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('templates/peserta/index',$data);
 	}
 
+	public function kontak(){
+		$data['contents'] = 'peserta/kontak';
+		$this->load->view('templates/peserta/index',$data);
+	}
+
 }

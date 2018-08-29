@@ -13,7 +13,7 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Kode Jurusan : </span>
+											<span>Kode Pendaftaran : </span>
 										</div>
 										<div class="col-md-12">
 											<input type="text" name="kode_pendaftaran" class="form-control " style="font-size: 12px;">
@@ -31,28 +31,52 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Jurusan : </span>
+											<span>Jurusan</span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="id_jurusan" class="form-control" style="font-size: 12px;">
+											<select name="id_jurusan" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $jurusan = $this->Peserta_model->getlistjurusan();
+
+												?>
+												<?php foreach ($jurusan->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->jurusan; ?></option>
+												<?php } ?> 
+											</select>
 										</div>
 									</div>
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Panitia : </span>
+											<span>Panitia</span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="id_panitia" class="form-control" style="font-size: 12px;">
+											<select name="id_panitia" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $panitia = $this->Peserta_model->getlistpanitia();
+
+												?>
+												<?php foreach ($panitia->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->nama_panitia; ?></option>
+												<?php } ?> 
+											</select>
 										</div>
 									</div>
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Jadwal : </span>
+											<span>Jadwal</span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="id_jadwal" class="form-control" style="font-size: 12px;">
+											<select name="id_jadwal" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $jadwal = $this->Peserta_model->getlistjadwal();
+
+												?>
+												<?php foreach ($jadwal->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->jadwal; ?></option>
+												<?php } ?> 
+											</select>
 										</div>
 									</div>
 									<br>
@@ -61,7 +85,12 @@
 											<span>Jenis Kelamin : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="jenkel" class="form-control" style="font-size: 12px;">
+											<tr>
+												<td>
+													<input type="radio" name="jenkel" value="L" checked="" />Laki-laki
+									    			<input type="radio" name="jenkel" value="P"/>Perempuan<br/>
+												</td>
+											</tr>
 										</div>
 									</div>
 									<br>
@@ -70,7 +99,7 @@
 											<span>Tanggal lahir: </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="tgl_lahir" class="form-control" style="font-size: 12px;">
+											<input type="date" name="tgl_lahir" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
 									<br>
@@ -97,7 +126,7 @@
 											<span>Email: </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="email" class="form-control" style="font-size: 12px;">
+											<input type="email" name="email" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
 									<br>

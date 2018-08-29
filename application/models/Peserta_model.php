@@ -8,27 +8,37 @@
 		// 	$this->load->model('Peserta_model');
 		// }
 
-		public function jurusan(){
-		//RELASIKAN TABEL
-		return $this->db->query("SELECT * FROM peserta JOIN jurusan on jurusan.id = peserta.id_jurusan")->result();
-
-		}
-
-		// public function jurusan($limit, $start  = 0, $q = NULL){
-		// 	//RELASIKAN TABEL JURUSAN DENGAN PESERTA
-		// 	$this->db->join('jurusan', 'jurusan.id = peserta.id_jurusan', $q);
-		// 	$this->db->order_by('id','DESC');
-		// 	$this->db->limit($limit, $start);
-
-		// 	return $this->db->get('peserta')->result();
-		// }
-
 		public function daftarPeserta(){
-			return $this->db->get('peserta')->result();
+		//RELASIKAN TABEL
+
+		return $this->db->select('*, peserta.id AS pid ')
+						->from('peserta')
+						->join('jurusan', 'jurusan.id = peserta.id_jurusan ')
+						->join('panitia', 'panitia.id = peserta.id_panitia ')
+						->join('jadwal', 'jadwal.id = peserta.id_jadwal ')
+						->get()
+						->result_array();
+
+
+		// return $this->db->query("SELECT * FROM peserta JOIN jurusan on jurusan.id = peserta.id_jurusan")->result();
+		// return $this->db->query("SELECT * FROM peserta JOIN panitia on panitia.id = peserta.id_panitia")->result();
+
 		}
 
-		public function index(){
-			$this->load->view('templates/admin/index');
+		public function getlistpeserta(){
+			return $this->db->get('peserta');
+		}
+
+		public function getlistjurusan(){
+			return $this->db->get('jurusan');
+		}
+
+		public function getlistpanitia(){
+			return $this->db->get('panitia');
+		}
+
+		public function getlistjadwal(){
+			return $this->db->get('jadwal');
 		}
 
 		public function insert(){
@@ -111,9 +121,5 @@
 		$this->db->delete('peserta');
 	}
 
-	public function getlistjurusan()
-	{
-		return $this->db->get('jurusan');
-	}
-		
+	
 }

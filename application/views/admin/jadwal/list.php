@@ -12,7 +12,6 @@
 					<th>Jadwal</th>
 					<th>Waktu</th>
 					<th>Tanggal</th>
-					<th>Status</th>
 				</thead>
 
 				<tbody>
@@ -22,7 +21,6 @@
 							<td><?php echo $data->jadwal ?></td>
 							<td><?php echo $data->waktu ?></td>
 							<td><?php echo $data->tgl ?></td>
-							<td><?php echo $data->status ?></td>
 							<td  style="text-align: center; width: 200px;">
 								<a href="<?php echo site_url('/jadwal/edit/').$data->id ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-edit"></i> Edit</a>
 								<a href="<?php echo site_url('/jadwal/hapus/').$data->id ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i> Hapus</a>

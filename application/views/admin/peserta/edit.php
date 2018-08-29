@@ -32,49 +32,67 @@
 									</div>
 									<br>
 									<div class="row">
-										<input type="hidden" name="id" value="<?php echo $peserta['id'] ?>">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span >Jurusan : </span>
+											<span>Jurusan</span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_jurusan" class="form-control">
-												<?php $jurusan = $this->Peserta_model->getlistjurusan(); ?>
-												<?php foreach ($jurusan as $key) {?> 
+											<select name="id_jurusan" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $jurusan = $this->Peserta_model->getlistjurusan();
+
+												?>
+												<?php foreach ($jurusan->result() as $key){ ?>
 													<option value="<?php echo $key->id ?>"><?php echo $key->jurusan; ?></option>
-													
-												<?php } ?>
+												<?php } ?> 
 											</select>
-											<!-- <input type="text" name="id_jurusan" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['id_jurusan'] ?>" > -->
 										</div>
 									</div>
 									<br>
 									<div class="row">
-										<input type="hidden" name="id" value="<?php echo $peserta['id'] ?>">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span >Panitia : </span>
+											<span>Panitia</span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="id_panitia" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['id_panitia'] ?>" >
+											<select name="id_panitia" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $panitia = $this->Peserta_model->getlistpanitia();
+
+												?>
+												<?php foreach ($panitia->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->nama_panitia; ?></option>
+												<?php } ?> 
+											</select>
 										</div>
 									</div>
 									<br>
 									<div class="row">
-										<input type="hidden" name="id" value="<?php echo $peserta['id'] ?>">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span >jadwal : </span>
+											<span>Jadwal</span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="id_jadwal" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['id_jadwal'] ?>" >
+											<select name="id_jadwal" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $jadwal = $this->Peserta_model->getlistjadwal();
+
+												?>
+												<?php foreach ($jadwal->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->jadwal; ?></option>
+												<?php } ?> 
+											</select>
 										</div>
 									</div>
 									<br>
 									<div class="row">
-										<input type="hidden" name="id" value="<?php echo $peserta['id'] ?>">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span >jenis Kelamin : </span>
+											<span>Jenis Kelamin : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="jenkel" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['jenkel'] ?>" >
+											<tr>
+												<td>
+													<input type="radio" name="jenkel" value="L" checked="" />Laki-laki
+									    			<input type="radio" name="jenkel" value="P"/>Perempuan<br/>
+												</td>
+											</tr>
 										</div>
 									</div>
 									<br>
@@ -84,7 +102,7 @@
 											<span >Tanggal Lahir : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="tgl_lahir" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['tgl_lahir'] ?>" >
+											<input type="date" name="tgl_lahir" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['tgl_lahir'] ?>" >
 										</div>
 									</div>
 									<br>
@@ -114,7 +132,7 @@
 											<span >Email : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="email" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['email'] ?>" >
+											<input type="email" name="email" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['email'] ?>" >
 										</div>
 									</div>
 									<br>

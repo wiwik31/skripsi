@@ -13,6 +13,7 @@
 		}
 
 		public function daftarSoal(){
+			return $this->db->query("SELECT * FROM soal JOIN matauji on matauji.id = soal.id_matauji")->result();
 			return $this->db->get('soal')->result();
 		}
 
@@ -97,6 +98,11 @@
 		$this->db->where('id_matauji', $matauji);
 
 		return $this->db->get();
+	}
+
+	public function getlistsoal(){
+	return $this->db->get('soal');
+
 	}
 		
 }
