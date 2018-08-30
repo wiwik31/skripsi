@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
 	//untuk admin
 	public function index(){
 		$data['contents'] = 'admin/dashboard';
+		// $data['kelompok_data'] = $this->Welcome_model->daftarPeserta();
 		$this->load->view('templates/admin/index',$data);
 	}
 
