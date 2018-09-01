@@ -16,8 +16,7 @@
 											<span>Jadwal</span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_jadwal" class="form-control " style="font-size: 12px;">
-												<option>-Pilih-</option>
+											<select name="id_jadwal" class="form-control " value="<?php echo $panitia['id'] ?>" style="font-size: 12px;">
 												<?php $jadwal = $this->Panitia_model->getlistjadwal();
 
 												?>

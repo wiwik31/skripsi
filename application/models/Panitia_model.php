@@ -3,6 +3,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Panitia_model extends CI_Model {
 
+	public function Panitia(){
+		return $this->db->select('*, panitia.id AS pid')
+					->from('panitia')
+					->join('jadwal','jadwal.id = panitia.id_jadwal')
+					->get()
+					->result_array();
+		// return $this->db->query("SELECT * FROM panitia JOIN jadwal on jadwal.id = panitia.id_jadwal")->result();
+		// return $this->db->get('panitia')->result();
+	}	
+	public function get_list_by_id($id){
+		$sql = "select id,id_jadwal, nama_panitia from panitia where id in (".$id.")";
+	}
+
+	public function get_by_jadwal($id){
+		$this->db->select('*');
+		$this->db->from('panitia');
+		$this->db->where('id_jadwal',$jadwal);
+	}
+
 	public function daftarPanitia(){
 		return $this->db->query("SELECT * FROM panitia JOIN jadwal on jadwal.id = panitia.id_jadwal")->result();
 		// return $this->db->get('panitia')->result();

@@ -27,7 +27,7 @@ class Panitia extends CI_Controller {
 
 
 	}
-
+ 
 	public function edit(){
 		if (isset($_POST['submit'])){
 			$this->Panitia_model->edit();
