@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	defined('BASEPATH') OR exit ('No direct script access allowed');
 
@@ -10,11 +10,12 @@
 
 		public function matauji(){
 			return $this->db->query("SELECT * FROM soal JOIN matauji on matauji.id = soal.id_matauji")->result();
+
 		}
 
 		public function daftarSoal(){
-			return $this->db->query("SELECT * FROM soal JOIN matauji on matauji.id = soal.id_matauji")->result();
-			return $this->db->get('soal')->result();
+			return $this->db->query("SELECT *, a.id as id_soal FROM soal a JOIN matauji b on b.id = a.id_matauji")->result();
+			// return $this->db->get('soal')->result();
 		}
 
 		public function index(){
@@ -30,7 +31,7 @@
 			$d = $this->input->post('d');
 			$e = $this->input->post('e');
 			$jawaban = $this->input->post('jawaban');
-			
+
 
 			$data = array(
 				'id_matauji' => $id_matauji,
@@ -41,7 +42,7 @@
 				'd' => $d,
 				'e' => $e,
 				'jawaban' => $jawaban,
-				
+
 			);
 
 			$this->db->insert('soal', $data);
@@ -49,7 +50,9 @@
 		}
 
 		public function getById($id){
-		return $query = $this->db->query("SELECT * FROM soal WHERE id='$id' ")->row_array();
+			// return $query = $this->db->query("SELECT * FROM soal WHERE id='$id' ")->row_array();
+			return $this->db->query("SELECT *, a.id as id_soal FROM soal a JOIN matauji b on b.id = a.id_matauji WHERE a.id = '$id' ")->row_array();
+
 
 		}
 
@@ -104,5 +107,5 @@
 	return $this->db->get('soal');
 
 	}
-		
+
 }

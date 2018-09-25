@@ -12,26 +12,20 @@
 							<form action="" method="POST">
 								<div class="container">
 									<div class="row">
-										<input type="hidden" name="id" value="<?php echo $soal['id'] ?>">
+										<input type="hidden" name="id" value="<?php echo $soal['id_soal'] ?>">
 										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span >Mata Ujian : </span>
 										</div>
 										<div class="col-md-12">
-
-
-											<!-- <select name="id_matauji" class="form-control" style="font-size: 12px;">
-
-												<?php
-														foreach ($matauji as $list) {
-															echo " <option value='$list->id'";
-															echo $soal['id']==$list->id?'selected':'' ;
-															echo ">$list->nama_matauji</option>";
+											<select name="id_matauji" class="form-control">
+													<?php
+														foreach ($matauji_data as $matauji) {
+															echo " <option value='$matauji->id'";
+															echo $id_matauji['id_matauji']==$matauji->id?'selected':'' ;
+															echo ">$matauji->nama_matauji</option>";
 														}
 													 ?>
-											</select> -->
-
-
-											<!-- <input type="text" name="id_matauji" class="form-control " style="font-size: 12px;" value="<?php echo $soal['id_matauji'] ?>" > -->
+											</select>
 										</div>
 									</div>
 									<br>

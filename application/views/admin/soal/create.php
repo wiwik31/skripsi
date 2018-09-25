@@ -11,32 +11,19 @@
 							<br>
 							<form action="" method="POST">
 								<div class="container">
+
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span>Mata Ujian : </span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_matauji" class="form-control " style="font-size: 12px;">
-												<option>-Pilih-</option>
-												<?php $matauji = $this->Soal_model->getlistmatauji();
-
-												?>
-												<?php foreach ($matauji->result() as $key){ ?>
-													<option value="<?php echo $key->id ?>"><?php echo $key->nama_matauji; ?></option>
-												<?php } ?> 
-											
+											<select name="id_matauji" class="form-control" >
+												<?php foreach ($matauji as $key): ?>
+													<option value="<?php echo $key->id ?>" ><?php echo $key->nama_matauji ?></option>
+												<?php endforeach ?>
 											</select>
-											<!-- <input type="text" name="kelompok_gejala_id" class="form-control " style="font-size: 12px;"> -->
 										</div>
 									</div>
-									<!-- <div class="row">
-										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Mata Ujian : </span>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="id_matauji" class="form-control " style="font-size: 12px;">
-										</div>
-									</div> -->
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
@@ -101,10 +88,10 @@
 									<a href="<?php echo site_url('/soal/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>
 							</form>
-						</div>	
+						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

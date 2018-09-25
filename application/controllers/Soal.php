@@ -58,7 +58,7 @@ class Soal extends CI_Controller {
 
             // var_dump($id_soal);exit;
 
-            for ($i=0; $i < $j_tampil ; $i++) { 
+            for ($i=0; $i < $j_tampil ; $i++) {
                 $nomor =$id_soal[$i];
                 if (!empty($pilihan[$nomor])) {
                    $jawaban = $pilihan[$nomor];
@@ -72,7 +72,7 @@ class Soal extends CI_Controller {
                     $kosong++;
                 }
             }
-            
+
             // $jum_soal = $this->Soal_model->get_all();
             //rumus skor
             $skor = $benar / $j_tampil * 100;
@@ -94,8 +94,8 @@ class Soal extends CI_Controller {
             $this->Ujian_model->insert($data);
             $this->session->set_flashdata('success', 'Terimakasih, Pemberitahuan kelulusan akan kami infokan melalui Email.');
             redirect('welcome');
-            
-            
+
+
         }
     }
 
@@ -114,6 +114,7 @@ class Soal extends CI_Controller {
 			redirect('soal/index');
 		}
 
+        $data['matauji'] = $this->Matauji_model->daftarMatauji();
 		$data['contents'] = 'admin/soal/create';
 		$this->load->view('templates/admin/index', $data);
 
@@ -121,13 +122,17 @@ class Soal extends CI_Controller {
 	}
 
 	public function edit(){
+
 		if (isset($_POST['submit'])){
 			$this->Soal_model->edit();
 			redirect('soal/index');
 		}
 
+
 		$id=$this->uri->segment(3);
-		$data['matauji'] = $this->Matauji_model->daftarMatauji();
+        $data['matauji_data'] = $this->Matauji_model->daftarMatauji();
+		$data['id_matauji'] = $this->Soal_model->getById($id);
+        // var_dump($this->Soal_model->getById($id));exit;
 		$data['soal'] = $this->Soal_model->getById($id);
 		$data['contents'] = 'admin/soal/edit';
 		$this->load->view('templates/admin/index', $data);
