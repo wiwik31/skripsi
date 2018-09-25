@@ -49,19 +49,13 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Image : </span>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="image" class="form-control" style="font-size: 12px;">
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span>Status : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="status" class="form-control" style="font-size: 12px;">
+											<select name="status" class="form-control">
+												<option value="0" >Tidak Aktif</option>
+												<option value="1" selected="selected" >Aktif</option>
+											</select>
 										</div>
 									</div>
 									<br>
@@ -69,10 +63,10 @@
 									<a href="<?php echo site_url('/admin/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>
 							</form>
-						</div>	
+						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

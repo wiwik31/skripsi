@@ -29,7 +29,7 @@
 											<input type="text" name="email" class="form-control" style="font-size: 12px;" value="<?php echo $admin['email'] ?>">
 										</div>
 
-										
+
 									</div>
 									<br>
 									<div class="row">
@@ -43,19 +43,11 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Password : </span>
+											<span>Password : </span><br>
+											<small>* Kosongkan jika tidak ingin mengedit password</small>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="password" class="form-control" style="font-size: 12px;" value="<?php echo $admin['password'] ?>">
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Image : </span>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="image" class="form-control" style="font-size: 12px;" value="<?php echo $admin['image'] ?>">
+											<input type="text" name="password" class="form-control" style="font-size: 12px;"  >
 										</div>
 									</div>
 									<br>
@@ -64,7 +56,16 @@
 											<span>Status : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="status" class="form-control" style="font-size: 12px;" value="<?php echo $admin['status'] ?>">
+											<select name="status" class="form-control">
+												<?php if ($admin['status'] == 1): ?>
+													<option value="1" selected="selected" >Aktif</option>
+													<option value="0" >Tidak Aktif</option>
+												<?php else: ?>
+													<option value="1"  >Aktif</option>
+													<option value="0" selected="selected" >Tidak Aktif</option>
+												<?php endif ?>
+
+											</select>
 										</div>
 									</div>
 									<br>
@@ -72,10 +73,10 @@
 									<a href="<?php echo site_url('/admin/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>
 							</form>
-						</div>	
+						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

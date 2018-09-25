@@ -6,25 +6,23 @@ class Admin_model extends CI_Model {
 	public function daftarAdmin(){
 		return $this->db->get('admin')->result();
 	}
-	
+
 	public function insert(){
 		$nama_admin = $this->input->post('nama_admin');
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
 		$password = md5($this->input->post('password'));
-		$image = $this->input->post('image');
 		$status = $this->input->post('status');
-	
+
 	$data = array(
 					'nama_admin'=>$nama_admin,
 					'email'=>$email,
 					'username'=>$username,
 					'password'=>$password,
-					'image'=>$image,
 					'status'=>$status,
 			);
 	$this->db->insert('admin', $data);
-	
+
 	}
 
 	public function getById($id){
@@ -38,17 +36,27 @@ class Admin_model extends CI_Model {
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$image = $this->input->post('image');
 		$status = $this->input->post('status');
 
-		$data = array(
+		$data = array();
+
+		if (empty($password)) {
+			$data = array(
+					'nama_admin'=>$nama_admin,
+					'email'=>$email,
+					'username'=>$username,
+					'status'=>$status,
+			);
+		}else{
+			$data = array(
 					'nama_admin'=>$nama_admin,
 					'email'=>$email,
 					'username'=>$username,
 					'password'=>$password,
-					'image'=>$image,
 					'status'=>$status,
-		);
+			);
+		}
+
 		$this->db->where('id',$id);
 		$this->db->update('admin', $data);
 	}
