@@ -8,9 +8,9 @@ class Soal extends CI_Controller {
 		$this->load->model('Soal_model'); //load model soal
 		$this->load->model('Matauji_model');
 	}
-	
 
-	
+
+
 
 	public function online(){
 		//METODE LCM
@@ -26,7 +26,7 @@ class Soal extends CI_Controller {
 		$xn = 6;
 
 		$soal_data = array();
-		for ($i=1; $i <= $j_tampil->jumlah_soal; $i++) { 
+		for ($i=1; $i <= $j_tampil->jumlah_soal; $i++) {
             $r = rand(1, $m);
 			//LCM
 			$xn = ($a * $r +$c) % $m;
@@ -49,19 +49,19 @@ class Soal extends CI_Controller {
 
 	public function index()
 	{
-		$data['contents'] = 'admin/soal/list'; 
+		$data['contents'] = 'admin/soal/list';
 		$data['kelompok_data'] = $this->Soal_model->daftarSoal();
 		$this->load->view('templates/admin/index', $data);
 
 	}
 
-	public function create(){	
+	public function create(){
 		if (isset($_POST['submit'])){
 			$this->Soal_model->insert();
 			redirect('soal/index');
 		}
-		
-		$data['contents'] = 'admin/soal/create'; 
+
+		$data['contents'] = 'admin/soal/create';
 		$this->load->view('templates/admin/index', $data);
 
 
@@ -74,8 +74,9 @@ class Soal extends CI_Controller {
 		}
 
 		$id=$this->uri->segment(3);
+		$data['matauji'] = $this->Matauji_model->daftarMatauji();
 		$data['soal'] = $this->Soal_model->getById($id);
-		$data['contents'] = 'admin/soal/edit'; 
+		$data['contents'] = 'admin/soal/edit';
 		$this->load->view('templates/admin/index', $data);
 	}
 

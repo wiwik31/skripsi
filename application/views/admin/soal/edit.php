@@ -17,13 +17,20 @@
 											<span >Mata Ujian : </span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_matauji" class="form-control" style="font-size: 12px;">
-												<?php $matauji = $this->Soal_model->getlistmatauji();
-												 ?>
-												 <?php foreach ($matauji as $key) { ?>
-												 	<option value="<?php echo $key->id ?>"><?php echo $key->nama_matauji; ?></option>
-												 <?php } ?>
-											</select>
+
+
+											<!-- <select name="id_matauji" class="form-control" style="font-size: 12px;">
+
+												<?php
+														foreach ($matauji as $list) {
+															echo " <option value='$list->id'";
+															echo $soal['id']==$list->id?'selected':'' ;
+															echo ">$list->nama_matauji</option>";
+														}
+													 ?>
+											</select> -->
+
+
 											<!-- <input type="text" name="id_matauji" class="form-control " style="font-size: 12px;" value="<?php echo $soal['id_matauji'] ?>" > -->
 										</div>
 									</div>
@@ -91,10 +98,10 @@
 									<a href="<?php echo site_url('/soal/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>
 							</form>
-						</div>	
+						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

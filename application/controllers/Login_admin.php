@@ -5,7 +5,7 @@ class Login_admin extends CI_Controller {
 	function __construct(){
 		parent ::__construct();
 		$this->load->model('Login_model'); //load model login
-		
+
 	}
 
 	public function index()
@@ -37,6 +37,7 @@ class Login_admin extends CI_Controller {
 	public function logout(){
 		$data = array('username','password','is_login');
 		$this->session->unset_userdata($data);
-		redirect('Login_admin/index');	
+		redirect('Login_admin/index');
+
 	}
 }

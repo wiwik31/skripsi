@@ -52,7 +52,7 @@
             <li><a href="<?php echo site_url() ?>/admin"><i class="fa fa-circle-o"></i> Admin</a></li>
             <li><a href="<?php echo site_url() ?>/peserta"><i class="fa fa-circle-o"></i> Peserta</a></li>
             <li><a href="<?php echo site_url() ?>/panitia"><i class="fa fa-circle-o"></i> Panitia</a></li>
-            
+
           </ul>
         </li>
         <li class=" treeview">
@@ -77,12 +77,12 @@
           <li><a href="<?php echo site_url() ?>/laporan"><i class="fa fa-file"></i> Laporan</a></li>
           </a>
         </li>
-        <li class=" treeview">
-          <a href="<?php echo site_url() ?>/login_admin/logout"><i class="fa fa-sign-out"></i> <span>Logout</span>
+         <li class=" treeview">
+          <li><a href="<?php echo site_url() ?>/login_admin/logout"></i> <i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
           </a>
         </li>
 
-        
+
       </ul>
     </section>
     <!-- /.sidebar -->

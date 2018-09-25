@@ -6,15 +6,15 @@ class Matauji_model extends CI_Model {
 	public function daftarMatauji(){
 		return $this->db->get('matauji')->result();
 	}
-	
+
 	public function insert(){
 		$nama_matauji = $this->input->post('nama_matauji');
-	
+
 	$data = array(
 					'nama_matauji'=>$nama_matauji,
 			);
 	$this->db->insert('matauji', $data);
-	
+
 	}
 
 	public function getById($id){
