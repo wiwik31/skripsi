@@ -1,14 +1,22 @@
 <?php
- 
+
 class Welcome extends CI_Controller {
 	function __construct(){
 		parent ::__construct();
+		$this->load->model(array('Soal_model', 'Jurusan_model', 'Jadwal_model', 'Matauji_model', 'Peserta_model'));
 	}
 
 	//untuk admin
 	public function index(){
-		$data['contents'] = 'admin/dashboard';
-		// $data['kelompok_data'] = $this->Welcome_model->daftarPeserta();
+
+		$data = array(
+					'contents' => 'admin/dashboard',
+					'peserta' => $this->db->get('peserta')->result(),
+					'jurusan' => $this->db->get('jurusan')->result(),
+					'jadwal' => $this->db->get('jadwal')->result(),
+					'matauji' => $this->db->get('matauji')->result(),
+				);
+
 		$this->load->view('templates/admin/index',$data);
 	}
 
