@@ -46,6 +46,59 @@ class Soal extends CI_Controller {
 
 	}
 
+	public function cekJawaban(){
+        if (isset($_POST['submit'])) {
+            $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
+            $pilihan = $this->input->post('pilihan');
+            $id_soal = $this->input->post('id');
+            $skor = 0;
+            $benar = 0;
+            $salah = 0;
+            $kosong = 0;
+
+            // var_dump($id_soal);exit;
+
+            for ($i=0; $i < $j_tampil ; $i++) { 
+                $nomor =$id_soal[$i];
+                if (!empty($pilihan[$nomor])) {
+                   $jawaban = $pilihan[$nomor];
+                   $check = $this->db->query(" SELECT * FROM tbl_soal WHERE id_soal = '$nomor' AND jawaban= '$jawaban' ")->result();
+                   if ($check) {
+                       $benar++;
+                   }else{
+                       $salah++;
+                   }
+                }else{
+                    $kosong++;
+                }
+            }
+            
+            // $jum_soal = $this->Soal_model->get_all();
+            //rumus skor
+            $skor = $benar / $j_tampil * 100;
+            $nilai = number_format($skor, 1);
+            $status = '';
+            if ($nilai >= 70) {
+                $status = "Lulus";
+            }else{
+                $status = 'Tidak Lulus';
+            }
+
+            $data = array(
+                    'id_peserta' => $this->session->userdata('id_peserta'),
+                    'jumlah_benar' => $benar,
+                    'jumlah_salah' => $salah,
+                    'nilai' => $nilai,
+                    'status' => $status,
+            );
+            $this->Ujian_model->insert($data);
+            $this->session->set_flashdata('success', 'Terimakasih, Pemberitahuan kelulusan akan kami infokan melalui Email.');
+            redirect('welcome');
+            
+            
+        }
+    }
+
 
 	public function index()
 	{
