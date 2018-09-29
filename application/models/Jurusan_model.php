@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	defined('BASEPATH') OR exit ('No direct script access allowed');
 
@@ -55,5 +55,5 @@
 		$this->db->where('id', $id);
 		$this->db->delete('jurusan');
 	}
-		
+
 }

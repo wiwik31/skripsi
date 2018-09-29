@@ -11,7 +11,7 @@ class Panitia_model extends CI_Model {
 					->result_array();
 		// return $this->db->query("SELECT * FROM panitia JOIN jadwal on jadwal.id = panitia.id_jadwal")->result();
 		// return $this->db->get('panitia')->result();
-	}	
+	}
 	public function get_list_by_id($id){
 		$sql = "select id,id_jadwal, nama_panitia from panitia where id in (".$id.")";
 	}
@@ -23,7 +23,7 @@ class Panitia_model extends CI_Model {
 	}
 
 	public function daftarPanitia(){
-		return $this->db->query("SELECT * FROM panitia JOIN jadwal on jadwal.id = panitia.id_jadwal")->result();
+		return $this->db->query("SELECT *, panitia.id as pid FROM panitia JOIN jadwal on jadwal.id = panitia.id_jadwal")->result_array();
 		// return $this->db->get('panitia')->result();
 	}
 	public function getlistpanitia(){
@@ -33,17 +33,17 @@ class Panitia_model extends CI_Model {
 	public function getlistjadwal(){
 		return $this->db->get('jadwal');
 	}
-	
+
 	public function insert(){
 		$id_jadwal = $this->input->post('id_jadwal');
 		$nama_panitia = $this->input->post('nama_panitia');
-	
+
 	$data = array(
 					'id_jadwal'=>$id_jadwal,
 					'nama_panitia'=>$nama_panitia,
 			);
 	$this->db->insert('panitia', $data);
-	
+
 	}
 
 	public function getById($id){
