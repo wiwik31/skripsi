@@ -14,17 +14,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="<?php site_url()?>template_for_peserta/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo site_url()?>template_for_peserta/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="<?php site_url()?>template_for_peserta/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?php echo site_url()?>template_for_peserta/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="<?php site_url()?>template_for_peserta/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="<?php echo site_url()?>template_for_peserta/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="<?php site_url()?>template_for_peserta/css/style.css" rel="stylesheet">
-    <script src="<?php site_url()?>template_for_peserta/plugins/jquery/jquery.min.js"></script>
+    <link href="<?php echo site_url()?>template_for_peserta/css/style.css" rel="stylesheet">
+    <script src="<?php echo site_url()?>template_for_peserta/plugins/jquery/jquery.min.js"></script>
 
 </head>
 
@@ -36,7 +36,7 @@
         </div>
         <div class="card">
             <div class="body">
-                <?php echo form_open('login_peserta/login', array('id'=>'sign_in')) ?>
+                <?php  echo form_open('login_peserta/login', array('id'=>'sign_in')) ?>
 
                     <div class="msg">Sign in to start your session</div>
                     <div class="input-group">
@@ -83,17 +83,17 @@
     <!-- Jquery Core Js -->
 
     <!-- Bootstrap Core Js -->
-    <script src="<?php site_url()?>template_for_peserta/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo site_url()?>template_for_peserta/plugins/bootstrap/js/bootstrap.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="<?php site_url()?>template_for_peserta/plugins/node-waves/waves.js"></script>
+    <script src="<?php echo site_url()?>template_for_peserta/plugins/node-waves/waves.js"></script>
 
     <!-- Validation Plugin Js -->
-    <script src="<?php site_url()?>template_for_peserta/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="<?php echo site_url()?>template_for_peserta/plugins/jquery-validation/jquery.validate.js"></script>
 
     <!-- Custom Js -->
-    <script src="<?php site_url()?>template_for_peserta/js/admin.js"></script>
-    <script src="<?php site_url()?>template_for_peserta/js/pages/examples/sign-in.js"></script>
+    <script src="<?php echo site_url()?>template_for_peserta/js/admin.js"></script>
+    <script src="<?php echo site_url()?>template_for_peserta/js/pages/examples/sign-in.js"></script>
 </body>
 
 </html>
