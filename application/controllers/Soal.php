@@ -14,11 +14,21 @@ class Soal extends CI_Controller {
 
 
 	public function online(){
+		$id_peserta = $this->session->userdata('id_peserta');
+
+		//ini mengecek dua hal
+		//  jika peserta sudah ikut ujian, maka tdk akan bisa lagi ikut ujian
+		$check_peserta = $this->db->query("SELECT  a.id_peserta  from ujian a where id_peserta='$id_peserta' ")->result();
+		if ($check_peserta) {
+			$this->session->set_flashdata('error', 'Aduh, syudah mki ujian jadi jangan mki ikut lagi');
+			redirect('login_peserta/dashboard');
+		}
+
 		//METODE LCM
 		//Batas soal yang tampil
 		$jumlah = $this->db->query("SELECT * FROM soal ")->result();
 		//Untuk setting soal nanti
-	//    $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
+		//    $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
 		$j_tampil = 50;
 
 		//Ketentuan
@@ -29,7 +39,7 @@ class Soal extends CI_Controller {
 
 		$soal_data = array();
 		for ($i=1; $i <= $j_tampil; $i++) {
-            $r = rand(1, $m);
+			$r = rand(1, $m);
 			//LCM
 			$xn = ($a * $r +$c) % $m;
 			if ($xn < 6){
@@ -47,70 +57,71 @@ class Soal extends CI_Controller {
 		// echo "</pre>";
 		// exit;
 
-		$data = array('soal' =>$soal_data);
+		$data = array('data' =>$soal_data);
 		$data['contents'] = 'peserta/soal';
-		$this->load->view('templates/peserta/index', $data);
+		$data['title'] = 'Ujian Online | Peserta';
+		$this->load->view('templates/peserta/app', $data);
+	
 
 	}
 
 	public function cekJawaban(){
-		// var_dump($this->session->userdata);exit;
-		// print_r($_POST);exit;
-        if (isset($_POST['submit'])) {
-			// $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
-			$j_tampil = 50;
-            $pilihan = $this->input->post('pilihan');
-            $id_soal = $this->input->post('id');
-            $skor = 0;
-            $benar = 0;
-            $salah = 0;
-            $kosong = 0;
+		$id_peserta = $this->session->userdata('id_peserta');
 
-            // var_dump($id_soal);exit;
+		// $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
+		$j_tampil = 50;
+		$pilihan = $this->input->post('pilihan');
+		$id_soal = $this->input->post('id');
+		$skor = 0;
+		$benar = 0;
+		$salah = 0;
+		$kosong = 0;
 
-            for ($i=0; $i < $j_tampil ; $i++) {
-                $nomor =$id_soal[$i];
-                if (!empty($pilihan[$nomor])) {
-                   $jawaban = $pilihan[$nomor];
-                   $check = $this->db->query(" SELECT * FROM soal WHERE id = '$nomor' AND jawaban= '$jawaban' ")->result();
-                   if ($check) {
-                       $benar++;
-                   }else{
-                       $salah++;
-                   }
-                }else{
-                    $kosong++;
-                }
-            }
+		// var_dump($id_soal);exit;
 
-            // $jum_soal = $this->Soal_model->get_all();
-            //rumus skor
-            $skor = $benar / $j_tampil * 100;
-            $nilai = number_format($skor, 1);
-            $status = '';
-            if ($nilai >= 70) {
-                $status = "Lulus";
-            }else{
-                $status = 'Tidak Lulus';
-            }
+		for ($i=0; $i < $j_tampil ; $i++) {
+			$nomor =$id_soal[$i];
+			if (!empty($pilihan[$nomor])) {
+				$jawaban = $pilihan[$nomor];
+				$check = $this->db->query(" SELECT * FROM soal WHERE id = '$nomor' AND jawaban= '$jawaban' ")->result();
+				if ($check) {
+					$benar++;
+				}else{
+					$salah++;
+				}
+			}else{
+				$kosong++;
+			}
+		}
 
-            $data = array(
-                    'id_peserta' =>6,
-                    'id_panitia' =>6,
-                    'id_jadwal' =>6,
-                    'j_benar' => $benar,
-                    'j_salah' => $salah,
-                    'nilai' => $nilai,
-                    'status' => $status,
-			);
-			
-			// var_dump($data);exit;
-            $this->Ujian_model->insert($data);
-            $this->session->set_flashdata('success', 'Terimakasih, Pemberitahuan kelulusan akan kami infokan melalui Email.');
-            redirect('welcome');
+		// $jum_soal = $this->Soal_model->get_all();
+		//rumus skor
+		$skor = $benar / $j_tampil * 100;
+		$nilai = number_format($skor, 1);
+		$status = 0;
+		if ($nilai >= 70) {
+			$status = '1';
+		}else{
+			$status = '0';
+		}
+
+		$data = array(
+				'id_peserta' => $id_peserta,
+				'id_panitia' =>6,
+				'id_jadwal' =>6,
+				'j_benar' => $benar,
+				'j_salah' => $salah,
+				'nilai' => $nilai,
+				'status' => $status,
+		);
+		
+		// var_dump($data);exit;
+		$this->Ujian_model->insert($data);
+		$this->session->set_flashdata('success', 'Terimakasih, Pemberitahuan kelulusan akan kami infokan melalui Email.');
+		redirect('login_peserta/dashboard');
 
 
-        }
+        
     }
 
 

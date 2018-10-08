@@ -10,9 +10,7 @@ class Login_peserta extends CI_Controller {
 
 	public function index()
 	{
-		$data['contents'] = 'peserta/login'; 
-		// $data['kelompok_data'] = $this->Home_model->daftarPeserta();
-		$this->load->view('templates/peserta/index', $data);
+		$this->load->view('peserta/login');
 	}
 
 
@@ -20,9 +18,10 @@ class Login_peserta extends CI_Controller {
 	{
 		//INI UNTUK YANG SUDAH LOGIN DIARAHKAN KESINI
 		$data['contents'] = 'peserta/dashboard'; 
+		$data['title'] = 'Dashboard | Peserta '; 
 		// $data['kelompok_data'] = $this->Home_model->daftarPeserta();
 		//Untuk templates
-		$this->load->view('templates/peserta/dashboard', $data);
+		$this->load->view('templates/peserta/app', $data);
 	}
 
 	public function login(){
@@ -33,6 +32,7 @@ class Login_peserta extends CI_Controller {
 			$check = $this->Login_model->checkLoginpeserta($username,$password);
 
 			if (!$check){
+				$this->session->set_flashdata('error', 'Username atau Password anda salah. Silahkan coba lagi');
 				redirect('Login_peserta');
 			}else{
 				$data = array(

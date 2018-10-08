@@ -1,39 +1,100 @@
-<aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <!-- <div class="pull-left image">
-          <img src="<?php echo base_url() ?>templates/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div> -->
-        <!-- <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div> -->
-      </div>
-      <br>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <!-- <center><button class="btn btn-danger">LOGIN</button></center> -->
-        <li>
-          <a href="<?php echo site_url() ?>/login_peserta">
-            <i class="fa fa-home"></i> <span>Home</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="<?php echo site_url() ?>/T_jadwal">
-            <i class="fa fa-calendar"></i> <span>Jadwal Ujian</span>
-          </a>
-        </li>
-
-         <li>
-          <a href="<?php echo site_url() ?>/welcome/kontak">
-            <i class="fa fa-phone"></i> <span>Info Kontak</span>
-          </a>
-        </li>
-
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+        <?php $uri = $this->uri->segment(2) ?>
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <!-- <img src="<?php echo site_url() ?>templates/template_for_users/images/user.png" width="48" height="48" alt="User" /> -->
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, Tim <?php echo $this->session->userdata('nm_tim') ?></div>
+                    <div class="email"><?php echo $this->session->userdata('email') ?></div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="<?php echo site_url()?>users/profile"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="<?php echo site_url() ?>users/logout"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="<?php if($uri=='dashboard'){echo 'active';} ?>   ">
+                        <a  class="childmenu" href="<?php echo site_url() ?>login_peserta/dashboard">
+                            <i class="material-icons">home</i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="<?php if($uri=='soal'){echo 'active';} ?>  "   >
+                        <a class="childmenu" href="<?php echo site_url() ?>soal/online">
+                            <i class="material-icons">text_fields</i>
+                            <span>Online Test</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- <a href="pages/helper-classes.html">
+                            <i class="material-icons">layers</i>
+                            <span>Helper Classes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">widgets</i>
+                            <span>Widgets</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <span>Cards</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="pages/widgets/cards/basic.html">Basic</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/widgets/cards/colored.html">Colored</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/widgets/cards/no-header.html">No Header</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <span>Infobox</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="pages/widgets/infobox/infobox-1.html">Infobox-1</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/widgets/infobox/infobox-2.html">Infobox-2</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/widgets/infobox/infobox-3.html">Infobox-3</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/widgets/infobox/infobox-4.html">Infobox-4</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/widgets/infobox/infobox-5.html">Infobox-5</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2018 <a href="javascript:void(0);">Akbar cakep 2018</a>.
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
