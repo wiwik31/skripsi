@@ -12,18 +12,18 @@
                         <div class="row">
                             <div class="col-md-12">
                               <div class="container">
-                                <!-- <?php echo form_open(site_url().'/soal/cekJawaban') ?> -->
+                                <?php echo form_open(site_url().'/soal/cekJawaban') ?>
                                 <?php $no = 1; foreach($soal as $soal) : ?>
                                 <input type="hidden" name="id[]" value="<?php echo $soal->id ?>">   
                                     
                                     <?php echo $no++ .'.'. $soal->pertanyaan ?><br>
                                     <div class="form-group">
                                         <div class="radio ">
-                                        <label><input type="radio" name="pilihan[<?php echo $soal->id_soal ?>]" value="A" ><?php echo 'A. '.$soal->a ?></label><br>
-                                        <label><input type="radio" name="pilihan[<?php echo $soal->id_soal ?>]" value="B" ><?php echo 'B. '.$soal->b ?></label><br>
-                                        <label><input type="radio" name="pilihan[<?php echo $soal->id_soal ?>]" value="C" ><?php echo 'C. '.$soal->c ?></label><br>
-                                        <label><input type="radio" name="pilihan[<?php echo $soal->id_soal ?>]" value="D" ><?php echo 'D. '.$soal->d ?></label><br>
-                                        <label><input type="radio" name="pilihan[<?php echo $soal->id_soal ?>]" value="E" ><?php echo 'E. '.$soal->e ?></label><br>
+                                        <label><input type="radio" name="pilihan[<?php echo $soal->id ?>]" value="A" ><?php echo 'A. '.$soal->a ?></label><br>
+                                        <label><input type="radio" name="pilihan[<?php echo $soal->id ?>]" value="B" ><?php echo 'B. '.$soal->b ?></label><br>
+                                        <label><input type="radio" name="pilihan[<?php echo $soal->id ?>]" value="C" ><?php echo 'C. '.$soal->c ?></label><br>
+                                        <label><input type="radio" name="pilihan[<?php echo $soal->id ?>]" value="D" ><?php echo 'D. '.$soal->d ?></label><br>
+                                        <label><input type="radio" name="pilihan[<?php echo $soal->id ?>]" value="E" ><?php echo 'E. '.$soal->e ?></label><br>
                                         <p>Jawaban : <?php echo $soal->jawaban ?></p>
                                         </div>
                                     </div>

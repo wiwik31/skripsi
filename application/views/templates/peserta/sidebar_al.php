@@ -27,7 +27,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo site_url() ?>home/ujian">
+          <a href="<?php echo site_url() ?>/soal/online">
             <i class="fa fa-question-circle"></i> Mulai Ujian
           </a>
         </li>

@@ -38,6 +38,7 @@ class Login_peserta extends CI_Controller {
 				$data = array(
 					'username' => $username,
 					'password' => $password,
+					'id_peserta' => $check->id,
 					// 'is_login' => TRUE,
 				);
 				$this->session->set_userdata($data);

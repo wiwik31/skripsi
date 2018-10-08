@@ -7,6 +7,7 @@ class Soal extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Soal_model'); //load model soal
 		$this->load->model('Matauji_model');
+		$this->load->model('Ujian_model');
 	}
 
 
@@ -17,7 +18,8 @@ class Soal extends CI_Controller {
 		//Batas soal yang tampil
 		$jumlah = $this->db->query("SELECT * FROM soal ")->result();
 		//Untuk setting soal nanti
-       //$j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
+	//    $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
+		$j_tampil = 50;
 
 		//Ketentuan
 		$m = count($jumlah);
@@ -26,7 +28,7 @@ class Soal extends CI_Controller {
 		$xn = 6;
 
 		$soal_data = array();
-		for ($i=1; $i <= $j_tampil->jumlah_soal; $i++) {
+		for ($i=1; $i <= $j_tampil; $i++) {
             $r = rand(1, $m);
 			//LCM
 			$xn = ($a * $r +$c) % $m;
@@ -40,15 +42,23 @@ class Soal extends CI_Controller {
 			}
 
 		}
+		// echo "<pre>";
+		// var_dump($soal_data);
+		// echo "</pre>";
+		// exit;
 
 		$data = array('soal' =>$soal_data);
-		$this->load->view('templates/peserta/index','peserta/soal', $data);
+		$data['contents'] = 'peserta/soal';
+		$this->load->view('templates/peserta/index', $data);
 
 	}
 
 	public function cekJawaban(){
+		// var_dump($this->session->userdata);exit;
+		// print_r($_POST);exit;
         if (isset($_POST['submit'])) {
-            $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
+			// $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
+			$j_tampil = 50;
             $pilihan = $this->input->post('pilihan');
             $id_soal = $this->input->post('id');
             $skor = 0;
@@ -62,7 +72,7 @@ class Soal extends CI_Controller {
                 $nomor =$id_soal[$i];
                 if (!empty($pilihan[$nomor])) {
                    $jawaban = $pilihan[$nomor];
-                   $check = $this->db->query(" SELECT * FROM tbl_soal WHERE id_soal = '$nomor' AND jawaban= '$jawaban' ")->result();
+                   $check = $this->db->query(" SELECT * FROM soal WHERE id = '$nomor' AND jawaban= '$jawaban' ")->result();
                    if ($check) {
                        $benar++;
                    }else{
@@ -85,12 +95,16 @@ class Soal extends CI_Controller {
             }
 
             $data = array(
-                    'id_peserta' => $this->session->userdata('id_peserta'),
-                    'jumlah_benar' => $benar,
-                    'jumlah_salah' => $salah,
+                    'id_peserta' =>6,
+                    'id_panitia' =>6,
+                    'id_jadwal' =>6,
+                    'j_benar' => $benar,
+                    'j_salah' => $salah,
                     'nilai' => $nilai,
                     'status' => $status,
-            );
+			);
+			
+			// var_dump($data);exit;
             $this->Ujian_model->insert($data);
             $this->session->set_flashdata('success', 'Terimakasih, Pemberitahuan kelulusan akan kami infokan melalui Email.');
             redirect('welcome');
