@@ -13,7 +13,7 @@
                         <ul class="dropdown-menu pull-right">
                             <li><a href="<?php echo site_url()?>users/profile"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?php echo site_url() ?>users/logout"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="<?php echo site_url() ?>login_peserta/logout"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
