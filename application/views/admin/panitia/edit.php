@@ -12,11 +12,12 @@
 							<form action="" method="POST">
 								<div class="container">
 									<div class="row">
+										<input type="hidden" name="id" value="<?php echo $panitia['id_jadwal'] ?>">
 										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span>Jadwal</span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_jadwal" class="form-control " value="<?php echo $panitia['id'] ?>" style="font-size: 12px;">
+											<select name="id_jadwal" class="form-control" style="font-size: 12px;">
 												<?php $jadwal = $this->Panitia_model->getlistjadwal();
 
 												?>

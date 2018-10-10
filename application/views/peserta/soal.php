@@ -5,12 +5,12 @@
                         <div class="header">
                             <h2>ONLINE TEST</h2>
                            
-                            <h5 class="msg" id="msg" >Click Button Start to start the Online test <button type="button" class="btn btn-small btn-start">Start</button> </h5> 
+                            <h5 class="msg" id="msg" >Klik Tombol Mulai untuk memulai tes Online <button type="button" class="btn btn-small btn-start">MULAI</button> </h5> 
 
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
+                                        <i class="material-icons">SIUMB</i>
                                     </a>
                                     <!-- <ul class="dropdown-menu pull-right">
                                         <li><a href="javascript:void(0);">Action</a></li>
@@ -61,18 +61,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="thankModalLabel">Warning</h4>
+        <h1 class="modal-title" id="thankModalLabel"><p style="color: red;">Warning !</p></h1>
       </div>
       <div class="modal-body">
-        <p>You will not be able to access another page after Click Okay. Complete the questions and you will redirect to Dashboard automatically</p>
-        <p>If You  dont answer the questions when the time is up then only the selected answer will be saved to our database</p>
-        <p>Cheating is not good for our successfull</p>
-        <p>Bismillah</p>
-        <p>By Akbar cakep lebih cakep dari afgan</p>
+        <p>Anda tidak akan dapat mengakses halaman lain setelah Klik Oke. Lengkapi pertanyaan dan Anda akan dialihkan ke Halaman utama secara otomatis</p>
+        <p>Jika Anda tidak menjawab pertanyaan ketika waktunya habis maka hanya jawaban yang dipilih yang akan disimpan ke database kami</p>
+        <p>Curang tidak baik untuk kesuksesan dan kesehatan Anda</p>
+        <p>Jangan lupa berdo'a</p>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0px; ">Okay</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0px; ">Accept</button>
       </div>
     </div>
   </div>

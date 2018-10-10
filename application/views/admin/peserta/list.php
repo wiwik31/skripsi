@@ -16,7 +16,6 @@
 					<th>Jadwal</th>
 					<th>Jenis</th>
 					<th>Nomor Telpon</th>
-					<th>Status</th>
 					<th>Aksi</th>
 				</thead>
 
@@ -31,7 +30,6 @@
 							<td><?php echo $data['waktu'] ?></td>
 							<td><?php echo $data['jenkel'] ?></td>
 							<td><?php echo $data['no_telp'] ?></td>
-							<td><?php echo $data['status'] ?></td>
 							<td  style="text-align: center; width: 200px;">
 								<a href="<?php echo site_url('/peserta/edit/').$data['pid'] ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-edit"></i> Edit</a>
 								<a href="<?php echo site_url('/peserta/hapus/').$data['pid'] ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i> Hapus</a>

@@ -156,15 +156,7 @@
 										</div>
 									</div>
 									<br>
-									<div class="row">
-										<input type="hidden" name="id" value="<?php echo $peserta['id'] ?>">
-										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span >Status : </span>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="status" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['status'] ?>" >
-										</div>
-									</div>
+									
 									<br>
 					
 									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677b; border-color: #51677b;">Update</button>

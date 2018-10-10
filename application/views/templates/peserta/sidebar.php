@@ -6,7 +6,7 @@
                     <!-- <img src="<?php echo site_url() ?>templates/template_for_users/images/user.png" width="48" height="48" alt="User" /> -->
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, Tim <?php echo $this->session->userdata('nm_tim') ?></div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Selamat datang <?php echo $this->session->userdata('nm_tim') ?></div>
                     <div class="email"><?php echo $this->session->userdata('email') ?></div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
@@ -29,7 +29,7 @@
                             <span>Home</span>
                         </a>
                     </li>
-                    <li class="<?php if($uri=='soal'){echo 'active';} ?>  "   >
+                    <li class="<?php if($uri=='soal'){echo 'active';} ?>  ">
                         <a class="childmenu" href="<?php echo site_url() ?>soal/online">
                             <i class="material-icons">text_fields</i>
                             <span>Online Test</span>
@@ -93,7 +93,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2018 <a href="javascript:void(0);">Akbar cakep 2018</a>.
+                    &copy;<?php $tanggal=getdate(); echo $tanggal['year'] ?> <a href="javascript:void(0);">STMIK Handayani Makassar </a>.
                 </div>
             </div>
             <!-- #Footer -->
