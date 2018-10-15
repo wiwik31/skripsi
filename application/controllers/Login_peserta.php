@@ -5,6 +5,7 @@ class Login_peserta extends CI_Controller {
 	function __construct(){
 		parent ::__construct();
 		$this->load->model('Login_model'); //load model login
+		// if($this->session->userdata('admin_login') == false) redirect('login_peserta');
 		
 	}
 
@@ -39,7 +40,7 @@ class Login_peserta extends CI_Controller {
 					'username' => $username,
 					'password' => $password,
 					'id_peserta' => $check->id,
-					// 'is_login' => TRUE,
+					'admin_login' => TRUE,
 				);
 				$this->session->set_userdata($data);
 				//ini pemanggilan function dashboard nah
@@ -51,7 +52,7 @@ class Login_peserta extends CI_Controller {
 
 
 	public function logout(){
-		$data = array('username','password','is_login');
+		$data = array('username','password','admin_login');
 		$this->session->unset_userdata($data);
 		redirect('Login_peserta/index');	
 	}
