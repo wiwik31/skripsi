@@ -18,7 +18,10 @@
 										</div>
 										<div class="col-md-12">
 											<select name="id_matauji" class="form-control" >
-												<?php foreach ($matauji as $key): ?>
+												<option>-Pilih-</option>
+												<?php $soal = $this->Soal_model->getlistsoal();
+												 ?>
+												<?php foreach ($matauji->result() as $key): ?>
 													<option value="<?php echo $key->id ?>" ><?php echo $key->nama_matauji ?></option>
 												<?php endforeach ?>
 											</select>

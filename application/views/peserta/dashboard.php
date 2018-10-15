@@ -3,13 +3,11 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>TASK INFOS</h2>
-                            <h5> <?php if($this->session->flashdata('error')) echo $this->session->flashdata('error') ?> </h5>
-                            <h5> <?php if($this->session->flashdata('success')) echo $this->session->flashdata('success') ?> </h5>
+                            <h2>Selamat datang di Situs ujian STMIK HANDAYANI Makassar</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
+                                        <i class="material-icons">SIUMB</i>
                                     </a>
                                     <!-- <ul class="dropdown-menu pull-right">
                                         <li><a href="javascript:void(0);">Action</a></li>
@@ -20,13 +18,16 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <p>Welcome to Cakep!</p>
-                            <p>Before taking test, please read the guide below</p>
+                            <p></p>
+                            <p>Peraturan ujian online</p>
                             <ol>
-                                <li>You must be a handsome men like me. </li>
-                                <li>You can only open the Online Test page for one time. When the time has reached it's limits, your answer will be automatically saved and you can not answer the remaining questions anymore. </li>
+                                <li>Tidak mereset atau merefresh soal ujian saat sedang ujian</li>
+                                <li>Ujian hanya dilakukan 1 kali, maka gunakan sebaik-baik mungkin</li>
                             </ol>
-                            <p><strong> Head to the Online Test menu on the sidebar</strong></p>
+                            <p><strong> Selamat ujian</strong></p>
+
+                            <h5 style="color: red;"> <?php if($this->session->flashdata('error')) echo $this->session->flashdata('error') ?> </h5>
+                            <h5> <?php if($this->session->flashdata('success')) echo $this->session->flashdata('success') ?> </h5>
                             <!-- <div class="table-responsive">
                                 <table class="table table-hover dashboard-task-infos">
                                     <thead>

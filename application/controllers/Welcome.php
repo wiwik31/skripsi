@@ -12,7 +12,7 @@ class Welcome extends CI_Controller {
 		$data = array(
 					'contents' => 'admin/dashboard',
 					'peserta' => $this->db->get('peserta')->result(),
-					'jurusan' => $this->db->get('jurusan')->result(),
+					'ujian' => $this->db->get('ujian')->result(),
 					'jadwal' => $this->db->get('jadwal')->result(),
 					'matauji' => $this->db->get('matauji')->result(),
 				);
@@ -31,6 +31,8 @@ class Welcome extends CI_Controller {
 		$this->load->view('templates/peserta/index',$data);
 	}
 
-	//++__
+	public function profil(){
+		$data['contents'] = 'peserta/profil'; 
+		$this->load->view('templates/peserta/app', $data);
 
 }

@@ -8,6 +8,11 @@ class Peserta extends CI_Controller {
 		$this->load->model('Peserta_model'); //load model Peserta
 		// $this->load->model('Jurusan_model'); 
 	}
+
+	public function profil(){
+		$data['contents'] = 'peserta/profil'; 
+		$this->load->view('templates/peserta/app', $data);
+	}
 	
 	public function index()
 	{

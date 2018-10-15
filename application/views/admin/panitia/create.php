@@ -27,14 +27,6 @@
 											</select>
 										</div>
 									</div>
-									<!-- <div class="row">
-										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>jadwal : </span>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="id_jadwal" class="form-control " style="font-size: 12px;">
-										</div>
-									</div> -->
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">

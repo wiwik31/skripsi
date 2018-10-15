@@ -8,5 +8,8 @@
 			return $this->db->get('peserta')->result();
 		}
 
+		
+
+	}
 
 }

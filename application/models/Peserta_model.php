@@ -54,7 +54,6 @@
 			$email = $this->input->post('email');
 			$username = $this->input->post('username');
 			$password = md5($this->input->post('password'));
-			$status = $this->input->post('status');
 
 			$data = array(
 				'kode_pendaftaran' => $kode_pendaftaran,
@@ -95,7 +94,6 @@
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$status = $this->input->post('status');
 
 		$data = array(
 					'kode_pendaftaran' => $kode_pendaftaran,
@@ -110,7 +108,6 @@
 					'email' => $email,
 					'username' => $username,
 					'password' => $password,
-					'status' => $status,
 		);
 		$this->db->where('id',$id);
 		$this->db->update('peserta', $data);

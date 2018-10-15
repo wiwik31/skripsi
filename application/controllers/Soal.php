@@ -20,7 +20,7 @@ class Soal extends CI_Controller {
 		//  jika peserta sudah ikut ujian, maka tdk akan bisa lagi ikut ujian
 		$check_peserta = $this->db->query("SELECT  a.id_peserta  from ujian a where id_peserta='$id_peserta' ")->result();
 		if ($check_peserta) {
-			$this->session->set_flashdata('error', 'Aduh, syudah mki ujian jadi jangan mki ikut lagi');
+			$this->session->set_flashdata('error', 'Maaf, Anda sudah melakukan ujian. Silahkan tunggu pemberitahuan selanjutnya.');
 			redirect('login_peserta/dashboard');
 		}
 

@@ -10,7 +10,14 @@ class Laporan extends CI_Controller {
 	
 	public function index()
 	{
-		$data['contents'] = 'admin/laporan/list'; 
+		$data = array(
+					'contents' => 'admin/laporan/list',
+					'peserta' => $this->db->get('peserta')->result(),
+					'ujian' => $this->db->get('ujian')->result(),
+					'jadwal' => $this->db->get('jadwal')->result(),
+					'matauji' => $this->db->get('matauji')->result(),
+				);
+		// $data['contents'] = 'admin/laporan/list'; 
 		$data['kelompok_data'] = $this->Laporan_model->daftarlaporan();
 		$this->load->view('templates/admin/index', $data);
 	}
