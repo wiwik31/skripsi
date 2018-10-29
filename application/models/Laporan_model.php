@@ -7,11 +7,10 @@ class Laporan_model extends CI_Model {
 		return $this->db->get('laporan')->result();
 	}
 	
-
-	public function daftarLaporan(){
-		return $this->db->query("SELECT *, laporan.id as pid FROM laporan JOIN peserta on peserta.id = laporan.id_peserta")->result_array();
-		// return $this->db->get('panitia')->result();
-	}
+	// public function daftarLaporan(){
+	// 	return $this->db->query("SELECT *, laporan.id as pid FROM laporan JOIN peserta on peserta.id = laporan.id_peserta")->result_array();
+	// 	// return $this->db->get('panitia')->result();
+	// }
 
 	public function insert(){
 		$terdaftar = $this->input->post('terdaftar');

@@ -49,3 +49,5 @@
 <script src="<?php echo base_url() ?>templates/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url() ?>templates/dist/js/demo.js"></script>
+<script src="<?php echo base_url() ?>templates/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url() ?>templates/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

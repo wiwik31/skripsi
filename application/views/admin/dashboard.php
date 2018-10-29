@@ -35,7 +35,7 @@
             <div class="inner">
               <h3><?php echo count($jadwal) ?></h3>
 
-              <p>Yang lulus disini</p>
+              <p>Jadwal</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -48,14 +48,14 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-             <h3><?php echo count($matauji) ?></h3>
+             <h3><?php echo count($soal) ?></h3>
 
-              <p>Yang tidak lulus disini</p>
+              <p>Jumlah Soal</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="<?php echo site_url()?>/matauji" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo site_url()?>/soal" class="small-box-footer">Lihat <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

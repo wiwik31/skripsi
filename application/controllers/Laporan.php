@@ -12,13 +12,13 @@ class Laporan extends CI_Controller {
 	{
 		$data = array(
 					'contents' => 'admin/laporan/list',
-					'peserta' => $this->db->get('peserta')->result(),
-					'ujian' => $this->db->get('ujian')->result(),
-					'jadwal' => $this->db->get('jadwal')->result(),
-					'matauji' => $this->db->get('matauji')->result(),
+					'terdaftar' => $this->db->get('terdaftar')->result(),
+					'selesai_ujian' => $this->db->get('selesai_ujian')->result(),
+					'lulus' => $this->db->get('lulus')->result(),
+					'tidak_lulus' => $this->db->get('tidak_lulus')->result(),
 				);
 		// $data['contents'] = 'admin/laporan/list'; 
-		$data['kelompok_data'] = $this->Laporan_model->daftarlaporan();
+		$data['kelompok_data'] = $this->Laporan_model->daftarLaporan();
 		$this->load->view('templates/admin/index', $data);
 	}
 

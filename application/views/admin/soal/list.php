@@ -5,8 +5,8 @@
 		</div>
 			<a href="<?php echo site_url('/soal/create') ?>" class="btn btn-primary" style="border-radius: 0px; font-size: 12px; background:#3EA8FF; border-color: #3EA8FF;"><i class="fa fa-plus-circle"></i> Tambah Soal</a>
 
-			<div class="body">
-				<table id="example2" class="table table-bordered table-hover">
+			<div class="box-body">
+				<table id="example2 datatable" class="table table-bordered table-hover">
 				<thead>
 					<th>No</th>
 					<th>Mata Ujian</th>

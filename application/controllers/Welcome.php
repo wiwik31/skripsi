@@ -14,7 +14,7 @@ class Welcome extends CI_Controller {
 					'peserta' => $this->db->get('peserta')->result(),
 					'ujian' => $this->db->get('ujian')->result(),
 					'jadwal' => $this->db->get('jadwal')->result(),
-					'matauji' => $this->db->get('matauji')->result(),
+					'soal' => $this->db->get('soal')->result(),
 				);
 
 		$this->load->view('templates/admin/index',$data);
@@ -31,8 +31,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('templates/peserta/index',$data);
 	}
 
-	public function profil(){
-		$data['contents'] = 'peserta/profil'; 
-		$this->load->view('templates/peserta/app', $data);
+	
 
 }
