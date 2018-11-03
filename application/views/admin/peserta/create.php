@@ -16,7 +16,7 @@
 											<span>Kode Pendaftaran : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="kode_pendaftaran" class="form-control " style="font-size: 12px;">
+											<input type="text" readonly="readonly" name="kode_pendaftaran" class="form-control " style="font-size: 12px;" value="KD-<?php echo strtoupper(substr(uniqid(), 7,12)) ?>" >
 										</div>
 									</div>
 									<br>
