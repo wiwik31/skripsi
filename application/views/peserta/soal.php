@@ -99,10 +99,10 @@
 
         });
 
-        $(document).on("contextmenu",function(e){
-            alert('Hei, Have fun');
-            return false;
-        });
+        // $(document).on("contextmenu",function(e){
+        //     alert('Hei, Have fun');
+        //     return false;
+        // });
         
         $(document).keydown(function (event) {
             if (event.keyCode == 123) { // Prevent F12

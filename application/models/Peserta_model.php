@@ -68,7 +68,6 @@
 				'email' => $email,
 				'username' => $username,
 				'password' => $password,
-				'status' => $status,
 			);
 
 			$this->db->insert('peserta', $data);

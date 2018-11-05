@@ -31,6 +31,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('templates/peserta/index',$data);
 	}
 
+<<<<<<< HEAD
 	
+=======
+	public function profil(){
+		$data['contents'] = 'peserta/profil'; 
+		$this->load->view('templates/peserta/app', $data);
+	}
+>>>>>>> 0efe388b5d3232c34f67d4f19122203b4440480e
 
 }

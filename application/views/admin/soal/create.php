@@ -11,8 +11,23 @@
 							<br>
 							<form action="" method="POST">
 								<div class="container">
-
 									<div class="row">
+										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span>Mata Uji</span>
+										</div>
+										<div class="col-md-12">
+											<select name="id_matauji" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $matauji = $this->Matauji_model->getlistmatauji();
+
+												?>
+												<?php foreach ($matauji->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->matauji; ?></option>
+												<?php } ?> 
+											</select>
+										</div>
+									</div>
+									<!-- <div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span>Mata Ujian : </span>
 										</div>
@@ -21,12 +36,12 @@
 												<option>-Pilih-</option>
 												<?php $soal = $this->Soal_model->getlistsoal();
 												 ?>
-												<?php foreach ($matauji->result() as $key): ?>
-													<option value="<?php echo $key->id ?>" ><?php echo $key->nama_matauji ?></option>
-												<?php endforeach ?>
+												<?php foreach ($matauji->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>" ><?php echo $key->nama_matauji;?></option>
+												<?php } ?>
 											</select>
 										</div>
-									</div>
+									</div> -->
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">

@@ -32,7 +32,7 @@ class Ujian_model extends CI_Model {
 	}
 
 	public function getById($id){
-		return $query = $this->db->query("SELECT * FROM ujian WHERE id='$id' ")->row_array();
+		return $query = $this->db->query("SELECT * FROM ujian WHERE id_ujian='$id' ")->row_array();
 
 	}
 

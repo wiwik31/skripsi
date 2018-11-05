@@ -16,6 +16,7 @@
 					<th>Jumlah Salah</th>
 					<th>Nilai</th>
 					<th>Status</th>
+					<th>Aksi</th>
 				</thead>
 
 				<tbody>
