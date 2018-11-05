@@ -25,8 +25,8 @@
 					<?php $no = 1; foreach ($kelompok_data as $data): ?>
 						<tr>
 							<td><?php echo $no++ ?></td>
-							<td><?php echo $data->nama_matauji ?></td>
-							<td><?php echo $data->pertanyaan ?></td>
+							<td style="width: 15px"><?php echo $data->nama_matauji ?></td>
+							<td style="width: 15px"><?php echo $data->pertanyaan ?></td>
 							<td><?php echo $data->a ?></td>
 							<td><?php echo $data->b ?></td>
 							<td><?php echo $data->c ?></td>

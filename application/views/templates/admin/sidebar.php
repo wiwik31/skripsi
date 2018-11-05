@@ -63,7 +63,7 @@
           </a>
         </li>
         <li >
-          <a href="<?php echo site_url() ?>/laporan"><i class="fa fa-file"></i> <span> Laporan</span>
+          <!-- <a href="<?php echo site_url() ?>/laporan"><i class="fa fa-file"></i> <span> Laporan</span> -->
           </a>
         </li>
          <li class=" treeview">

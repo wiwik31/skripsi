@@ -37,4 +37,8 @@ class Matauji_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('matauji');
 	}
+
+	public function getlistmatauji(){
+		return $this->db->get('matauji');
+	}
 }
