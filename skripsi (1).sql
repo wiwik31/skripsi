@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Sep 2018 pada 04.38
+-- Waktu pembuatan: 11 Nov 2018 pada 15.51
 -- Versi server: 10.1.33-MariaDB
 -- Versi PHP: 7.2.6
 
@@ -43,9 +43,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nama_admin`, `email`, `username`, `password`, `image`, `status`) VALUES
-(1, 'Wiwik R', 'wiwik', 'wiwik', '0fd1ec5593cd341c7c4af53276f10be6', '', '1'),
-(2, 'winda', 'sjds', 'winda', 'aed2aec41bfd7ddb55b21f3ce206c66b', 'q', '1'),
-(5, 'admin', 'admin@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'q', '1');
+(6, 'admin', 'admin@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', '1'),
+(9, 'Admin 1', 'admin1@gmail.com', 'admin1', 'e00cf25ad42683b3df678c61f42c6bda', '', '1'),
+(10, 'Admin 2', 'admin2@gmail.com', 'admin2', 'c84258e9c39059a89ab77d846ddab909', '', '1'),
+(11, 'Admin 3', 'admin3@gmail.com', 'admin3', '32cacb2f994f6b42183a1300d9a3e8d6', '', '1');
 
 -- --------------------------------------------------------
 
@@ -110,6 +111,13 @@ CREATE TABLE `laporan` (
   `tidak_lulus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `laporan`
+--
+
+INSERT INTO `laporan` (`id`, `terdaftar`, `selesai_ujian`, `lulus`, `tidak_lulus`) VALUES
+(1, 11, 11, 11, 11);
+
 -- --------------------------------------------------------
 
 --
@@ -152,13 +160,11 @@ CREATE TABLE `panitia` (
 --
 
 INSERT INTO `panitia` (`id`, `id_jadwal`, `nama_panitia`) VALUES
-(3, 3, 'Hasriani'),
-(4, 4, 'HahaWi'),
-(15, 2, 'Jojo'),
-(16, 3, 'indah'),
-(17, 4, 'kiki'),
-(18, 2, 'aa'),
-(19, 1, 'hh');
+(1, 1, 'Panitia 1'),
+(2, 4, 'Panitia 2'),
+(3, 3, 'Panitia 3'),
+(4, 1, 'Panitia 4'),
+(5, 2, 'Panitia 5');
 
 -- --------------------------------------------------------
 
@@ -188,9 +194,10 @@ CREATE TABLE `peserta` (
 --
 
 INSERT INTO `peserta` (`id`, `kode_pendaftaran`, `nama_peserta`, `id_jurusan`, `id_panitia`, `id_jadwal`, `jenkel`, `tgl_lahir`, `alamat`, `no_telp`, `email`, `username`, `password`, `status`) VALUES
-(3, '010', 'Wiwik Ramna', 1, 1, 1, 'L', '1997-01-31', 'Jl. Masjid H Sulaimana', '082395149760', 'Wiwikramna@gmail.com', 'wiwik', 'wiwik', '1'),
-(4, '111', 'Winda', 1, 3, 2, 'P', '1997-11-01', 'Disana', '082399955544', 'winda@gmail.com', 'winda', 'winda', '1'),
-(6, '11212', 'peserta', 3, 4, 1, 'P', '1111-11-11', 'Disitu', '082395149760', 'peserta@gmail.com', 'peserta', '129451d83a60351a82516cb836842c68', '1');
+(13, 'KD-AB2EA9', 'Peserta 1', 1, 1, 1, 'L', '0111-01-31', 'Makassar', '082395485655', 'peserta1@gmail.com', 'peserta1', 'peserta1', '1'),
+(14, 'KD-ABDDB1', 'Peserta 2', 3, 3, 3, 'L', '0000-00-00', 'Bantaeng', '081542365444', 'peserta2@gmail.com', 'Peserta 2', 'b77af8c8a2065a5dfb41ec9cdb62b136', '1'),
+(15, 'KD-E6CC9B', 'Peserta 3', 2, 2, 1, 'L', '1983-01-31', 'Makassar', '089456215888', 'peserta3@gmail.com', 'Peserta 3', '5ee44cb1e528e875490589d6fb82d1fe', '1'),
+(16, 'KD-897E78', 'peserta4', 2, 3, 3, 'L', '1221-12-12', 'Jakarta', '082354975888', 'peserta4@gmail.com', 'peserta4', '2c3278404abe17dc9e479782563d8cab', '1');
 
 -- --------------------------------------------------------
 
@@ -359,8 +366,8 @@ INSERT INTO `soal` (`id`, `id_matauji`, `pertanyaan`, `a`, `b`, `c`, `d`, `e`, `
 (143, 6, 'SEGI TIGA : PIRAMIDA =', 'lingkaran : bola', 'segi empat : kotak', 'segi lima : pentagon', 'segi enam : kubus', 'segi delapan : oktagon', 'A'),
 (144, 6, 'STETOSKOP : DOKTER = osiloskop :', 'neurolog', 'arkeolog', 'masinis', 'montir', 'insinyur', 'D'),
 (145, 6, 'SEKUTU : KOMPETISI = kolaborasi :', 'Teman', 'Persaingan', 'Lawan', 'Musuh', 'Pertandingan', 'B'),
-(146, 2, 'w', 'w', 'w', 'w', 'w', 'w', 'A'),
-(147, 5, 'qq', 'qq', 'qq', 'qq', 'qq', 'qq', 'q');
+(146, 6, 'AAA', 'kk', 'hj', 'hhj', 'hj', 'm', 'A'),
+(147, 2, 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww', '1', '1', '1', '1', 'A', 'A');
 
 -- --------------------------------------------------------
 
@@ -378,6 +385,18 @@ CREATE TABLE `ujian` (
   `nilai` int(11) NOT NULL,
   `status` enum('1','0','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `ujian`
+--
+
+INSERT INTO `ujian` (`id_ujian`, `id_peserta`, `id_panitia`, `id_jadwal`, `j_benar`, `j_salah`, `nilai`, `status`) VALUES
+(1, 6, 6, 6, 2, 25, 4, '0'),
+(2, 9, 6, 6, 7, 27, 14, '0'),
+(3, 10, 6, 6, 8, 29, 16, '0'),
+(4, 11, 6, 6, 0, 13, 0, '0'),
+(5, 12, 6, 6, 2, 9, 4, '0'),
+(6, 13, 6, 6, 0, 0, 0, '0');
 
 --
 -- Indexes for dumped tables
@@ -446,7 +465,7 @@ ALTER TABLE `ujian`
 -- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `jadwal`
@@ -464,7 +483,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `matauji`
@@ -476,13 +495,13 @@ ALTER TABLE `matauji`
 -- AUTO_INCREMENT untuk tabel `panitia`
 --
 ALTER TABLE `panitia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `soal`
@@ -494,7 +513,7 @@ ALTER TABLE `soal`
 -- AUTO_INCREMENT untuk tabel `ujian`
 --
 ALTER TABLE `ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

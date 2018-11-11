@@ -3,11 +3,11 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Selamat datang di Situs ujian STMIK HANDAYANI Makassar</h2>
+                            <h2>Selamat Ujian</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">SIUMB</i>
+                                        <i class="material-icons">USPMB</i>
                                     </a>
                                     <!-- <ul class="dropdown-menu pull-right">
                                         <li><a href="javascript:void(0);">Action</a></li>
@@ -24,7 +24,7 @@
                                 <li>Tidak mereset atau merefresh soal ujian saat sedang ujian</li>
                                 <li>Ujian hanya dilakukan 1 kali, maka gunakan sebaik-baik mungkin</li>
                             </ol>
-                            <p><strong> Selamat ujian</strong></p>
+                            <!-- <p><strong> Selamat ujian</strong></p> -->
 
                             <h5 style="color: red;"> <?php if($this->session->flashdata('error')) echo $this->session->flashdata('error') ?> </h5>
                             <h5> <?php if($this->session->flashdata('success')) echo $this->session->flashdata('success') ?> </h5>

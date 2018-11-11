@@ -6,16 +6,16 @@
                     <!-- <img src="<?php echo site_url() ?>templates/template_for_users/images/user.png" width="48" height="48" alt="User" /> -->
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Selamat datang <?php echo $this->session->userdata('nm_tim') ?></div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SELAMAT DATANG <?php echo $this->session->userdata('nama') ?></div>
                     <div class="email"><?php echo $this->session->userdata('email') ?></div>
-                    <div class="btn-group user-helper-dropdown">
+                    <!-- <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="<?php echo site_url()?>users/profile"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="<?php echo site_url() ?>login_peserta/logout"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- #User Info -->
@@ -33,6 +33,12 @@
                         <a class="childmenu" href="<?php echo site_url() ?>soal/online">
                             <i class="material-icons">text_fields</i>
                             <span>Online Test</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="childmenu" href="<?php echo site_url() ?>login_peserta/logouts">
+                            <i class="material-icons">logout</i>
+                            <span>Logout</span>
                         </a>
                     </li>
                     <li>

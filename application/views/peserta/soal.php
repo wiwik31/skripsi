@@ -10,7 +10,7 @@
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">SIUMB</i>
+                                        <i class="material-icons">USPMB</i>
                                     </a>
                                     <!-- <ul class="dropdown-menu pull-right">
                                         <li><a href="javascript:void(0);">Action</a></li>

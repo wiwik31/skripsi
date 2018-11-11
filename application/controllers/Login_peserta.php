@@ -19,7 +19,7 @@ class Login_peserta extends CI_Controller {
 	{
 		//INI UNTUK YANG SUDAH LOGIN DIARAHKAN KESINI
 		$data['contents'] = 'peserta/dashboard'; 
-		$data['title'] = 'Dashboard | Peserta '; 
+		$data['title'] = 'USPMB | STMIK Handayani '; 
 		// $data['kelompok_data'] = $this->Home_model->daftarPeserta();
 		//Untuk templates
 		$this->load->view('templates/peserta/app', $data);

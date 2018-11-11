@@ -29,7 +29,7 @@ class Soal extends CI_Controller {
 		$jumlah = $this->db->query("SELECT * FROM soal ")->result();
 		//Untuk setting soal nanti
 		//    $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
-		$j_tampil = 100;
+		$j_tampil = 30;
 
 		//Ketentuan
 		$m = count($jumlah);

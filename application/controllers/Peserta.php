@@ -43,6 +43,12 @@ class Peserta extends CI_Controller {
 		$this->load->view('templates/admin/index', $data);
 	}
 
+	public function read(){
+		// $data['peserta'] = $this->Peserta_model->getById($id);
+		$data['contents'] = 'admin/peserta/read'; 
+		$this->load->view('templates/admin/index', $data);
+	}
+
 	public function hapus(){
 		$id=$this->uri->segment(3);
 		$this->Peserta_model->hapus($id);

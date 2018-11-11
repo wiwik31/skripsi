@@ -31,8 +31,9 @@
 							<td><?php echo $data['jenkel'] ?></td>
 							<td><?php echo $data['no_telp'] ?></td>
 							<td  style="text-align: center; width: 200px;">
-								<a href="<?php echo site_url('/peserta/edit/').$data['pid'] ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-edit"></i> Edit</a>
-								<a href="<?php echo site_url('/peserta/hapus/').$data['pid'] ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i> Hapus</a>
+								<a href="<?php echo site_url('/peserta/edit/').$data['pid'] ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-edit"></i> <!-- Edit --></a>
+								<a href="<?php echo site_url('/peserta/read/').$data['pid'] ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-print"></i> <!-- Cetak --></a>
+								<a href="<?php echo site_url('/peserta/hapus/').$data['pid'] ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i> <!-- Hapus --></a>
 							</td>
 						</tr>
 					<?php endforeach ?>
