@@ -26,6 +26,10 @@ class Panitia_model extends CI_Model {
 		return $this->db->query("SELECT *, panitia.id as pid FROM panitia JOIN jadwal on jadwal.id = panitia.id_jadwal")->result_array();
 		// return $this->db->get('panitia')->result();
 	}
+
+	public function getPanitia(){
+		return $this->db->get('panitia')->result();
+	}
 	public function getlistpanitia(){
 		return $this->db->get('panitia');
 	}

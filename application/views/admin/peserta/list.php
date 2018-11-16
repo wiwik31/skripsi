@@ -27,7 +27,7 @@
 							<td><?php echo $data['nama_peserta'] ?></td>
 							<td><?php echo $data['jurusan'] ?></td>
 							<td><?php echo $data['nama_panitia'] ?></td>
-							<td><?php echo $data['waktu'] ?></td>
+							<td><?php echo $data['jadwal']. ' ' .$data['waktu']. ' ' .$data['tgl'] ?></td>
 							<td><?php echo $data['jenkel'] ?></td>
 							<td><?php echo $data['no_telp'] ?></td>
 							<td  style="text-align: center; width: 200px;">

@@ -6,7 +6,9 @@ class Peserta extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Peserta_model'); //load model Peserta
-		// $this->load->model('Jurusan_model'); 
+		$this->load->model('Jurusan_model'); 
+		$this->load->model('Panitia_model'); 
+		$this->load->model('Jadwal_model'); 
 	}
 
 	
@@ -38,6 +40,9 @@ class Peserta extends CI_Controller {
 		}
 
 		$id=$this->uri->segment(3);
+		$data['jurusan_data'] = $this->Jurusan_model->daftarJurusan();
+		$data['panitia_data'] = $this->Panitia_model->getPanitia();
+		$data['jadwal_data'] = $this->Jadwal_model->daftarjadwal();
 		$data['peserta'] = $this->Peserta_model->getById($id);
 		$data['contents'] = 'admin/peserta/edit'; 
 		$this->load->view('templates/admin/index', $data);

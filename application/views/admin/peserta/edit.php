@@ -36,14 +36,14 @@
 											<span>Jurusan</span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_jurusan" class="form-control " style="font-size: 12px;">
-												<option>-Pilih-</option>
-												<?php $jurusan = $this->Peserta_model->getlistjurusan();
-
-												?>
-												<?php foreach ($jurusan->result() as $key){ ?>
-													<option value="<?php echo $key->id ?>"><?php echo $key->jurusan; ?></option>
-												<?php } ?> 
+											<select name="id_jurusan" class="form-control">
+													<?php
+														foreach ($jurusan_data as $jurusan) {
+															echo " <option value='$jurusan->id'";
+															echo $peserta['id_jurusan']==$jurusan->id?'selected':'' ;
+															echo ">$jurusan->jurusan</option>";
+														}
+													 ?>
 											</select>
 										</div>
 									</div>
@@ -53,14 +53,14 @@
 											<span>Panitia</span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_panitia" class="form-control " style="font-size: 12px;">
-												<option>-Pilih-</option>
-												<?php $panitia = $this->Peserta_model->getlistpanitia();
-
-												?>
-												<?php foreach ($panitia->result() as $key){ ?>
-													<option value="<?php echo $key->id ?>"><?php echo $key->nama_panitia; ?></option>
-												<?php } ?> 
+											<select name="id_panitia" class="form-control">
+													<?php
+														foreach ($panitia_data as $panitia) {
+															echo " <option value='$panitia->id'";
+															echo $peserta['id_panitia']==$panitia->id?'selected':'' ;
+															echo ">$panitia->nama_panitia</option>";
+														}
+													 ?>
 											</select>
 										</div>
 									</div>
@@ -70,14 +70,14 @@
 											<span>Jadwal</span>
 										</div>
 										<div class="col-md-12">
-											<select name="id_jadwal" class="form-control " style="font-size: 12px;">
-												<option>-Pilih-</option>
-												<?php $jadwal = $this->Peserta_model->getlistjadwal();
-
-												?>
-												<?php foreach ($jadwal->result() as $key){ ?>
-													<option value="<?php echo $key->id ?>"><?php echo $key->jadwal; ?></option>
-												<?php } ?> 
+											<select name="id_jadwal" class="form-control">
+													<?php
+														foreach ($jadwal_data as $jadwal) {
+															echo " <option value='$jadwal->id'";
+															echo $peserta['id_jadwal']==$jadwal->id?'selected':'' ;
+															echo ">$jadwal->jadwal $jadwal->waktu  $jadwal->tgl</option>";
+														}
+													 ?>
 											</select>
 										</div>
 									</div>
