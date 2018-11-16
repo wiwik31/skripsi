@@ -48,8 +48,10 @@ class Peserta extends CI_Controller {
 		$this->load->view('templates/admin/index', $data);
 	}
 
-	public function read(){
-		// $data['peserta'] = $this->Peserta_model->getById($id);
+	public function read($id){
+		$data['hasil'] = $this->checkHasil($id);
+		$data['peserta'] = $this->Peserta_model->getById($id);
+		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
 		$data['contents'] = 'admin/peserta/read'; 
 		$this->load->view('templates/admin/index', $data);
 	}
@@ -59,6 +61,11 @@ class Peserta extends CI_Controller {
 		$this->Peserta_model->hapus($id);
 		redirect('peserta/index');
 
+	}
+
+	function checkHasil($id){
+		  return $check = $this->db->query(" SELECT *, MAX(nilai) as nilai FROM ujian WHERE id_peserta = '$id' ")->row();
+		
 	}
 
 }

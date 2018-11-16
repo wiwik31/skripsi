@@ -8,27 +8,27 @@
 						<div class="col-md-12">
 							<TABLE>
 								<tr>
-									<th><img src="templates/dist/img/pp.png"></th>
+									<th width="300"><img src="<?php echo base_url()?>templates/dist/img/pp.png" width="10%"></th>
 									<th>KARTU TANDA UJIAN</th>
-									<th>TANGGAL</th>
+									<th><?php echo date('Y-m-d H:i') ?></th>
 								</tr>
 								<tr>
 									<td>Kode Pendaftaran</td>
-									<td>:</td>
+									<td>: <?php echo $peserta['kode_pendaftaran'] ?> </td>
 								</tr>
 								<tr>
 									<td>Nama</td>
-									<td>:</td>
+									<td>: <?php echo $peserta['nama_peserta'] ?></td>
 									<td></td>
 									<td style="border: 1px;">FOTO</td>
 								</tr>
 								<tr>
 									<td>Pilihan Prodi</td>
-									<td>:</td>
+									<td>: <?php echo  $peserta['id_jurusan'] == $jurusan['id'] ?  $jurusan['jurusan'] : ''  ?></td>
 								</tr>
 								<tr>
 									<td>Ket</td>
-									<td>:</td>
+									<td>: Selamat Anda lolos ddengan nilai : <?php echo $hasil->nilai ?> </td>
 									<td></td>
 									<td>TTD</td>
 								</tr>
