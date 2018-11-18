@@ -9,7 +9,7 @@
 							<TABLE>
 								<tr>
 									<th width="300"><img src="<?php echo base_url()?>templates/dist/img/pp.png" width="10%"></th>
-									<th>KARTU TANDA UJIAN</th>
+									<th>KARTU TANDA KELLUSAN</th>
 									<th><?php echo date('Y-m-d H:i') ?></th>
 								</tr>
 								<tr>
@@ -32,13 +32,20 @@
 								</tr>
 								<tr>
 									<td >Ket</td>
-									<td> :
+									<td>
+										<?php if ($hasil == 'gaada'): ?>
+											belum ujian
+										<?php else: ?>
+											: Selamat Anda lolos pada <br>
+											jurusan <b><?php echo $hasil['jurusan'] ?></b> <br>
+											nilai <b><?php echo $hasil['nilai'] ?></b>
+										<?php endif ?>
 									</td>
 									<td></td>
 									<td>TTD</td>
 								</tr>
 								<tr>
-									<td>Kartu peserta ini dibawah saat ujian</td>
+									<td>Selamat ya</td>
 								</tr>
 							</TABLE>
 							<br>

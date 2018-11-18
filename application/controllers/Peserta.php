@@ -49,9 +49,9 @@ class Peserta extends CI_Controller {
 	}
 
 	public function read($id){
-		$data['hasil'] = $this->checkHasil($id);
 		$data['peserta'] = $this->Peserta_model->getById($id);
 		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
+		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
 		$data['contents'] = 'admin/peserta/read'; 
 		$this->load->view('templates/admin/index', $data);
 	}
@@ -63,9 +63,6 @@ class Peserta extends CI_Controller {
 
 	}
 
-	function checkHasil($id){
-		  return $check = $this->db->query(" SELECT *, MAX(nilai) as nilai FROM ujian WHERE id_peserta = '$id' ")->row();
-		
-	}
+
 
 }

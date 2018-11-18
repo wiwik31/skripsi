@@ -6,6 +6,8 @@ class Ujian extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Ujian_model'); //load model Mataujian
+		$this->load->model('Peserta_model'); //load model Mataujian
+		$this->load->model('Jurusan_model'); //load model Mataujian
 	}
 	
 	public function index()
@@ -45,6 +47,45 @@ class Ujian extends CI_Controller {
 		$this->Ujian_model->hapus($id);
 		redirect('ujian/index');
 
+	}
+
+	public function cetak($id){
+		$data['hasil'] = $this->checkHasil($id);
+		$data['peserta'] = $this->Peserta_model->getById($id);
+		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
+		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
+		$data['contents'] = 'admin/ujian/cetak'; 
+		$this->load->view('templates/admin/index', $data);
+
+	}
+
+	function checkHasil($id){
+	 	$check = $this->db->query(" SELECT * FROM ujian WHERE id_peserta = '$id' ")->row();
+	 	if (!$check) {
+	 		return 'gaada';
+	 	}
+
+	 	$peserta = $this->db->query("SELECT * FROM peserta where id='$id' ")->row();
+
+		$arr = array(); 
+	  	if ($check->nilai >=50) {
+			$checkJurusan = $this->db->query("SELECT * FROM jurusan WHERE id ='$peserta->id_jurusan' ")->row();
+	  		$arr = array(
+	  			'nilai'=>$check->nilai,
+	  			'jurusan'=> $checkJurusan->jurusan
+	  		);
+	    }else{
+	    	$checkJurusan = $this->db->query("SELECT * FROM jurusan WHERE id ='$peserta->id_jurusan2' ")->row();
+	  		$arr =array(
+	  			'nilai'=>$check->nilai,
+	  			'jurusan'=> $checkJurusan->jurusan
+	  		);
+	    }
+
+	    // var_dump(array('hasil'=>$arr));exit;
+
+	    return $arr;
+		
 	}
 
 }

@@ -31,10 +31,27 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Jurusan</span>
+											<span>Jurusan 1</span>
 										</div>
 										<div class="col-md-12">
 											<select name="id_jurusan" class="form-control " style="font-size: 12px;">
+												<option>-Pilih-</option>
+												<?php $jurusan = $this->Peserta_model->getlistjurusan();
+
+												?>
+												<?php foreach ($jurusan->result() as $key){ ?>
+													<option value="<?php echo $key->id ?>"><?php echo $key->jurusan; ?></option>
+												<?php } ?> 
+											</select>
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span>Jurusan 2</span>
+										</div>
+										<div class="col-md-12">
+											<select name="id_jurusan2" class="form-control " style="font-size: 12px;">
 												<option>-Pilih-</option>
 												<?php $jurusan = $this->Peserta_model->getlistjurusan();
 

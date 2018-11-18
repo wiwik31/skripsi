@@ -69,7 +69,7 @@ class Soal extends CI_Controller {
 		$id_peserta = $this->session->userdata('id_peserta');
 
 		// $j_tampil = $this->db->query("SELECT * from tbl_settingsoal")->row();
-		$j_tampil = 50;
+		$j_tampil = 30;
 		$pilihan = $this->input->post('pilihan');
 		$id_soal = $this->input->post('id');
 		$skor = 0;
@@ -107,8 +107,6 @@ class Soal extends CI_Controller {
 
 		$data = array(
 				'id_peserta' => $id_peserta,
-				'id_panitia' =>6,
-				'id_jadwal' =>6,
 				'j_benar' => $benar,
 				'j_salah' => $salah,
 				'nilai' => $nilai,

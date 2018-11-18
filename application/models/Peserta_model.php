@@ -16,6 +16,7 @@
 						->join('jurusan', 'jurusan.id = peserta.id_jurusan ')
 						->join('panitia', 'panitia.id = peserta.id_panitia ')
 						->join('jadwal', 'jadwal.id = peserta.id_jadwal ')
+						->order_by('peserta.id', 'DESC')
 						->get()
 						->result_array();
 
@@ -45,6 +46,7 @@
 			$kode_pendaftaran = $this->input->post('kode_pendaftaran');
 			$nama_peserta = $this->input->post('nama_peserta');
 			$id_jurusan = $this->input->post('id_jurusan');
+			$id_jurusan2 = $this->input->post('id_jurusan2');
 			$id_panitia = $this->input->post('id_panitia');
 			$id_jadwal = $this->input->post('id_jadwal');
 			$jenkel = $this->input->post('jenkel');
@@ -59,6 +61,7 @@
 				'kode_pendaftaran' => $kode_pendaftaran,
 				'nama_peserta' => $nama_peserta,
 				'id_jurusan' => $id_jurusan,
+				'id_jurusan2' => $id_jurusan2,
 				'id_panitia' => $id_panitia,
 				'id_jadwal' => $id_jadwal,
 				'jenkel' => $jenkel,
@@ -84,6 +87,7 @@
 		$kode_pendaftaran = $this->input->post('kode_pendaftaran');
 		$nama_peserta = $this->input->post('nama_peserta');
 		$id_jurusan = $this->input->post('id_jurusan');
+		$id_jurusan2 = $this->input->post('id_jurusan2');
 		$id_panitia = $this->input->post('id_panitia');
 		$id_jadwal = $this->input->post('id_jadwal');
 		$jenkel = $this->input->post('jenkel');
@@ -98,6 +102,7 @@
 					'kode_pendaftaran' => $kode_pendaftaran,
 					'nama_peserta' => $nama_peserta,
 					'id_jurusan' => $id_jurusan,
+					'id_jurusan2' => $id_jurusan2,
 					'id_panitia' => $id_panitia,
 					'id_jadwal' => $id_jadwal,
 					'jenkel' => $jenkel,

@@ -10,8 +10,6 @@
 				<thead>
 					<th>No</th>
 					<th>Nama Peserta</th>
-					<th>Panitia</th>
-					<th>Jadwal</th>
 					<th>Jumlah Benar</th>
 					<th>Jumlah Salah</th>
 					<th>Nilai</th>
@@ -23,9 +21,7 @@
 					<?php $no = 1; foreach ($kelompok_data as $data): ?>
 						<tr>
 							<td><?php echo $no++ ?></td>
-							<td><?php echo $data->id_peserta ?></td>
-							<td><?php echo $data->id_panitia ?></td>
-							<td><?php echo $data->id_jadwal ?></td>
+							<td><a href="<?php echo base_url().'ujian/cetak/'.$data->id_peserta ?>"><span class="label label-success" ><?php echo $data->nama_peserta ?></span></a></td>
 							<td><?php echo $data->j_benar ?></td>
 							<td><?php echo $data->j_salah ?></td>
 							<td><?php echo $data->nilai ?></td>

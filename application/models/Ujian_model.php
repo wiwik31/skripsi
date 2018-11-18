@@ -4,7 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Ujian_model extends CI_Model {
 
 	public function daftarUjian(){
-		return $this->db->get('ujian')->result();
+		// return $this->db->get('ujian')->result();
+		return $this->db->select('*')
+						->from('ujian as a')
+						->join('peserta as b', 'b.id=a.id_peserta')
+						->get()
+						->result();
 	}
 	
 	public function insert($data){

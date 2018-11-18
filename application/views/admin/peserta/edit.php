@@ -33,7 +33,7 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Jurusan</span>
+											<span>Jurusan 1</span>
 										</div>
 										<div class="col-md-12">
 											<select name="id_jurusan" class="form-control">
@@ -41,6 +41,23 @@
 														foreach ($jurusan_data as $jurusan) {
 															echo " <option value='$jurusan->id'";
 															echo $peserta['id_jurusan']==$jurusan->id?'selected':'' ;
+															echo ">$jurusan->jurusan</option>";
+														}
+													 ?>
+											</select>
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span>Jurusan 2</span>
+										</div>
+										<div class="col-md-12">
+											<select name="id_jurusan2" class="form-control">
+													<?php
+														foreach ($jurusan_data as $jurusan) {
+															echo " <option value='$jurusan->id'";
+															echo $peserta['id_jurusan2']==$jurusan->id?'selected':'' ;
 															echo ">$jurusan->jurusan</option>";
 														}
 													 ?>
