@@ -36,7 +36,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="childmenu" href="<?php echo site_url() ?>login_peserta/logouts">
+                        <a class="childmenu" href="<?php echo site_url() ?>login_peserta/logout">
                             <i class="material-icons">logout</i>
                             <span>Logout</span>
                         </a>

@@ -3,7 +3,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Selamat Ujian</h2>
+                            <!-- <h2>Selamat Ujian</h2> -->
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -19,7 +19,7 @@
                         </div>
                         <div class="body">
                             <p></p>
-                            <p>Peraturan ujian online</p>
+                            <p><h3>Peraturan ujian online</h3></p>
                             <ol>
                                 <li>Tidak mereset atau merefresh soal ujian saat sedang ujian</li>
                                 <li>Ujian hanya dilakukan 1 kali, maka gunakan sebaik-baik mungkin</li>

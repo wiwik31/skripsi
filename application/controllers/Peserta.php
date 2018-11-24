@@ -11,7 +11,17 @@ class Peserta extends CI_Controller {
 		$this->load->model('Jadwal_model'); 
 	}
 
-	
+	public function cetak($id){
+		// $data['hasil'] = $this->checkHasil($id);
+		$data['peserta'] = $this->Peserta_model->getById($id);
+		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
+		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
+		$data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
+		$data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
+		$data['contents'] = 'admin/peserta/cetak'; 
+		$this->load->view('templates/admin/index', $data);
+
+	}
 	public function index()
 	{
 		$data['contents'] = 'admin/peserta/list'; 

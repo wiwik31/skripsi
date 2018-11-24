@@ -8,6 +8,8 @@ class Ujian extends CI_Controller {
 		$this->load->model('Ujian_model'); //load model Mataujian
 		$this->load->model('Peserta_model'); //load model Mataujian
 		$this->load->model('Jurusan_model'); //load model Mataujian
+		$this->load->model('Panitia_model'); //load model Mataujian
+		$this->load->model('Jadwal_model'); //load model Mataujian
 	}
 	
 	public function index()
@@ -54,10 +56,13 @@ class Ujian extends CI_Controller {
 		$data['peserta'] = $this->Peserta_model->getById($id);
 		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
 		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
+		$data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
+		$data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
 		$data['contents'] = 'admin/ujian/cetak'; 
 		$this->load->view('templates/admin/index', $data);
 
 	}
+
 
 	function checkHasil($id){
 	 	$check = $this->db->query(" SELECT * FROM ujian WHERE id_peserta = '$id' ")->row();

@@ -1,4 +1,4 @@
-<?php
+*<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ujian_model extends CI_Model {
@@ -40,7 +40,7 @@ class Ujian_model extends CI_Model {
 		return $query = $this->db->query("SELECT * FROM ujian WHERE id_ujian='$id' ")->row_array();
 
 	}
-
+	
 	public function edit(){
 		$id = $this->input->post('id');
 		$id_peserta = $this->input->post('id_peserta');
