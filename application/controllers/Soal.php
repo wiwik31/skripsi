@@ -115,7 +115,7 @@ class Soal extends CI_Controller {
 		
 		// var_dump($data);exit;
 		$this->Ujian_model->insert($data);
-		$this->session->set_flashdata('success', 'Terimakasih, Silahkan menghubungi panitia untuk mencetak hasil ujian.');
+		$this->session->set_flashdata('success', 'Terimakasih, Silahkan Klik tombol dibawah ini untuk mencetak hasil ujian.');
 		redirect('login_peserta/dashboard');
 
 
