@@ -8,6 +8,10 @@ class Soal extends CI_Controller {
 		$this->load->model('Soal_model'); //load model soal
 		$this->load->model('Matauji_model');
 		$this->load->model('Ujian_model');
+		$this->load->model('Peserta_model'); //load model Peserta
+		$this->load->model('Jurusan_model'); 
+		$this->load->model('Panitia_model'); 
+		$this->load->model('Jadwal_model'); 
 	}
 
 
@@ -165,6 +169,18 @@ class Soal extends CI_Controller {
 		$id=$this->uri->segment(3);
 		$this->Soal_model->hapus($id);
 		redirect('soal/index');
+
+	}
+
+	public function cetak($id){
+		$data['peserta'] = $this->Peserta_model->getById($id);
+		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
+		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
+		$data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
+		$data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
+		$data['contents'] = 'peserta/cetak'; 
+		$data['title'] = 'Hasil Ujian Online | Peserta';
+		$this->load->view('templates/peserta/app', $data);
 
 	}
 

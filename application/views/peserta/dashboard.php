@@ -23,11 +23,21 @@
                             <ol>
                                 <li>Tidak mereset atau merefresh soal ujian saat sedang ujian</li>
                                 <li>Ujian hanya dilakukan 1 kali, maka gunakan sebaik-baik mungkin</li>
+                                <li>Setelah Ujian, bagian bawah halaman ini akant tersedia tombol untuk cetak hasil ujian</li>
                             </ol>
                             <!-- <p><strong> Selamat ujian</strong></p> -->
 
                             <h5 style="color: red;"> <?php if($this->session->flashdata('error')) echo $this->session->flashdata('error') ?> </h5>
-                            <h5> <?php if($this->session->flashdata('success')) echo $this->session->flashdata('success') ?> </h5>
+                            <h5> <?php 
+                                    if($this->session->flashdata('success')){
+                                        echo $this->session->flashdata('success') ;
+                                        echo "<br>";  ?> 
+                                        <a href="<?php echo base_url().'soal/cetak/'.$this->session->userdata('id_peserta') ?>" class="btn btn-primary" >Cetak Hasil Ujian</a>
+                                        
+                                        <?php } ?>
+                                        
+                            </h5>
+
                             <!-- <div class="table-responsive">
                                 <table class="table table-hover dashboard-task-infos">
                                     <thead>
