@@ -11,6 +11,19 @@ class Laporan_model extends CI_Model {
 	// 	return $this->db->query("SELECT *, laporan.id as pid FROM laporan JOIN peserta on peserta.id = laporan.id_peserta")->result_array();
 	// 	// return $this->db->get('panitia')->result();
 	// }
+	public function daftarPeserta(){
+		// return $this->db->get('peserta')->result();
+
+	return $this->db->select('*, peserta.id AS pid ')
+						->from('peserta')
+						->join('jurusan', 'jurusan.id = peserta.id_jurusan ')
+						->join('panitia', 'panitia.id = peserta.id_panitia ')
+						->join('jadwal', 'jadwal.id = peserta.id_jadwal ')
+						->order_by('peserta.id', 'DESC')
+						->get()
+						->result_array();
+				}	
+		
 
 	public function insert(){
 		$terdaftar = $this->input->post('terdaftar');

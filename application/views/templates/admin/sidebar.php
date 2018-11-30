@@ -56,15 +56,20 @@
             <li><a href="<?php echo site_url() ?>/matauji"><i class="fa fa-circle-o"></i> Mata Ujian</a></li>
             <li><a href="<?php echo site_url() ?>/jadwal"><i class="fa fa-circle-o"></i> Jadwal Ujian</a></li>
             <li><a href="<?php echo site_url() ?>/soal"><i class="fa fa-circle-o"></i> Soal Ujian</a></li>
+            <li><a href="<?php echo site_url() ?>/tahun"><i class="fa fa-circle-o"></i> Tahun Akademik</a></li>
           </ul>
         </li>
-        <li >
-          <a href="<?php echo site_url() ?>/ujian"><i class="fa fa-tasks"></i> <span> Hasil Ujian</span>
+        <li class=" treeview">
+          <a href="#">
+            <i class="fa fa-file-text"></i> <span>DATA</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
-        </li>
-        <li >
-          <!-- <a href="<?php echo site_url() ?>/laporan"><i class="fa fa-file"></i> <span> Laporan</span> -->
-          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo site_url() ?>/ujian"><i class="fa fa-circle-o"></i> Hasil Ujian</a></li>
+            <li><a href="<?php echo site_url() ?>/laporan"><i class="fa fa-circle-o"></i> Laporan</a></li>
+          </ul>
         </li>
          <li class=" treeview">
           <li><a href="<?php echo site_url() ?>/login_admin/logout"></i> <i class="fa fa-sign-out"></i> <span>Logout</span></a></li>

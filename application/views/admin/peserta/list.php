@@ -14,7 +14,7 @@
 					<th>Jurusan</th>
 					<th>Panitia</th>
 					<th>Jadwal</th>
-					<th>Jenis</th>
+					<th>JK</th>
 					<th>Nomor Telpon</th>
 					<th>Aksi</th>
 				</thead>

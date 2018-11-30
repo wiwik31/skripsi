@@ -6,13 +6,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<TABLE height="150px">
+							<TABLE height="100px">
 								<img src="<?php echo base_url()?>templates/dist/img/atashasil.png"width="900 px" width="100%">
-								<center><p> Tahun Akademik <?php $tanggal=getdate(); echo $tanggal['year'] ?></p></center>
+								<center><p> Tahun Akademik <?php echo $peserta['tahun'] ?></p></center>
 								<tr><br><br><br>
 									<td width="150px">Kode Pendaftaran</td>
-									<td width="400px">: <?php echo $peserta['kode_pendaftaran'] ?> </td> 
-									<td rowspan="4" colspan="3" width="230"><center>
+									<td width="200px">: <?php echo $peserta['kode_pendaftaran'] ?> </td> 
+									<td rowspan="5" colspan="1" width="230"><center>
 										<?php if ($hasil == 'gaada'): ?>
 											belum ujian
 										<?php else: ?>
@@ -21,11 +21,11 @@
 											Dengan nilai ujian <b><?php echo $hasil['nilai'] ?></b>
 											<!-- nilai <b><?php echo $hasil['nilai'] ?></b> -->
 										<?php endif ?></center></td>
-									
 								</tr>
 								<tr>
 									<td>Nama</td>
 									<td>: <?php echo $peserta['nama_peserta'] ?></td>
+
 								</tr> 
 								<tr>
 									<td>Pilihan Prodi 1</td>
@@ -40,19 +40,43 @@
 									<td>: <?php echo $jadwal['waktu']. ' ' .$jadwal['tgl'] ?></td>
 								</tr>
 								<tr>
+									<tr> 
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									</tr>
+									
+								</tr> <tr>
 									
 								</tr>
-							</TABLE>
+							</TABLE> <br><br><br>
 							<table>
 								<tr>
-									<td>
-										<img src="<?php echo base_url()?>templates/dist/img/bawah.png"width="600 px">
-									</td>
-									<td><center><?php echo $panitia['nama_panitia'] ?></center></td>
-								</tr>
-								<tr>
 									<td> </td>
-									<td>_______________________</td>
+									<td></td>
+								</tr>
+								
+							</table>
+							<table>
+								<tr>
+									<td rowspan="5">
+										<img src="<?php echo base_url()?>templates/dist/img/bawah.png"width="600px">
+									</td>
+									<td><center>STMIK Handayani Makassar</center>
+									<center>Makassar, <?php echo date('d-m-Y') ?></td>
+								</tr>
+								
+									<td></center></td>
+								</tr>
+								</tr> <br>
+								<tr>
+									<td></td>
+								</tr> 
+								<tr>
+									<td> <br><br>
+									<center style="height: 1px;"><?php echo $panitia['nama_panitia'] ?></center>
+									_______________________
+								</td>
 								</tr>
 							</table>
 

@@ -7,6 +7,7 @@ class Peserta extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Peserta_model'); //load model Peserta
 		$this->load->model('Jurusan_model'); 
+		$this->load->model('Ujian_model'); 
 		$this->load->model('Panitia_model'); 
 		$this->load->model('Jadwal_model'); 
 	}
@@ -22,6 +23,8 @@ class Peserta extends CI_Controller {
 		$this->load->view('templates/admin/index', $data);
 
 	}
+
+
 	public function index()
 	{
 		$data['contents'] = 'admin/peserta/list'; 

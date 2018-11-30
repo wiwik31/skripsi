@@ -103,7 +103,7 @@ class Soal extends CI_Controller {
 		$skor = $benar / $j_tampil * 100;
 		$nilai = number_format($skor, 1);
 		$status = 0;
-		if ($nilai >= 70) {
+		if ($nilai >= 50) {
 			$status = '1';
 		}else{
 			$status = '0';
@@ -178,7 +178,7 @@ class Soal extends CI_Controller {
 		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
 		$data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
 		$data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
-		$data['contents'] = 'peserta/cetak'; 
+		$data['contents'] = 'peserta/hasilujian'; 
 		$data['title'] = 'Hasil Ujian Online | Peserta';
 		$this->load->view('templates/peserta/app', $data);
 

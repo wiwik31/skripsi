@@ -44,17 +44,27 @@
 								</tr>
 							</TABLE> <br> <br>
 								<table>
-									<tr>
-										<td>
-											<img src="<?php echo base_url()?>templates/dist/img/bawah.png"width="600 px">
-										</td>
-										<td><center><?php echo $panitia['nama_panitia'] ?></center></td>
-									</tr>
-									<tr>
-										<td> </td>
-										<td>_______________________</td>
-									</tr>
-								</table>
+								<tr>
+									<td rowspan="5">
+										<img src="<?php echo base_url()?>templates/dist/img/bawah.png"width="600px">
+									</td>
+									<td><center>STMIK Handayani Makassar</center>
+									<center>Makassar, <?php echo date('d-m-Y') ?></td>
+								</tr>
+								
+									<td></center></td>
+								</tr>
+								</tr> <br>
+								<tr>
+									<td></td>
+								</tr> 
+								<tr>
+									<td> <br><br>
+									<center style="height: 1px;"><?php echo $panitia['nama_panitia'] ?></center>
+									_______________________
+								</td>
+								</tr>
+							</table>
 
 							<!-- <table>
 								<tr>

@@ -164,6 +164,14 @@
 											<input type="text" name="password" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
+									<div class="row">
+										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span>Tahun Akademik: </span>
+										</div>
+										<div class="col-md-12">
+											<input type="text" name="tahun" class="form-control" style="font-size: 12px;">
+										</div>
+									</div>
 									<br>
 									
 									<br>

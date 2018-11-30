@@ -55,6 +55,7 @@
 			$no_telp = $this->input->post('no_telp');
 			$email = $this->input->post('email');
 			$username = $this->input->post('username');
+			$tahun = $this->input->post('tahun');
 			$password = md5($this->input->post('password'));
 
 			$data = array(
@@ -70,6 +71,7 @@
 				'no_telp' => $no_telp,
 				'email' => $email,
 				'username' => $username,
+				'tahun' => $tahun,
 				'password' => $password,
 			);
 
@@ -97,6 +99,7 @@
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
+		$tahun = $this->input->post('tahun');
 
 		$data = array(
 					'kode_pendaftaran' => $kode_pendaftaran,
@@ -112,6 +115,7 @@
 					'email' => $email,
 					'username' => $username,
 					'password' => $password,
+					'tahun' => $tahun,
 		);
 		$this->db->where('id',$id);
 		$this->db->update('peserta', $data);

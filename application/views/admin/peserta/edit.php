@@ -172,6 +172,15 @@
 											<input type="text" name="password" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['password'] ?>" >
 										</div>
 									</div>
+									<div class="row">
+										<input type="hidden" name="id" value="<?php echo $peserta['id'] ?>">
+										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span >Tahun : </span>
+										</div>
+										<div class="col-md-12">
+											<input type="text" name="tahun" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['tahun'] ?>" >
+										</div>
+									</div>
 									<br>
 									
 									<br>
