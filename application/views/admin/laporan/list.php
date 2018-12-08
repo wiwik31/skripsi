@@ -63,6 +63,9 @@
 							<td><?php echo $data['tgl_lahir'] ?></td>
 							<td><?php echo $data['alamat'] ?></td>
 							<td><?php echo $data['no_telp'] ?></td>
+						<!-- <?php $no = 1; foreach ($kelompok_data1 as $data): ?>
+							<td><?php echo $data->nilai ?></td>
+							<?php endforeach ?> -->
 						</tr>
 					<?php endforeach ?>
 					</tbody>

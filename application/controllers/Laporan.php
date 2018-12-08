@@ -54,6 +54,24 @@ class Laporan extends CI_Controller {
 				);
 
 		$data['kelompok_data'] = $this->Laporan_model->daftarPeserta();
+		$data['kelompok_data1'] = $this->Laporan_model->daftarUjian();
+		$this->load->view('templates/admin/index', $data);
+	}
+
+	public function selesaiujian()
+	{
+		$data = array(
+					'contents' => 'admin/laporan/selesaiujian',
+					'peserta' => $this->db->get('peserta')->result(),
+					'ujian' => $this->db->get('ujian')->result(),
+					'jadwal' => $this->db->get('jadwal')->result(),
+					'soal' => $this->db->get('soal')->result(),
+					'panitia' => $this->db->get('panitia')->result(),
+					'admin' => $this->db->get('admin')->result(),
+				);
+
+		$data['kelompok_data'] = $this->Laporan_model->daftarPeserta();
+		$data['kelompok_data1'] = $this->Laporan_model->daftarUjian();
 		$this->load->view('templates/admin/index', $data);
 	}
 

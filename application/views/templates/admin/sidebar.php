@@ -68,7 +68,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url() ?>/ujian"><i class="fa fa-circle-o"></i> Hasil Ujian</a></li>
-            <li><a href="<?php echo site_url() ?>/laporan"><i class="fa fa-circle-o"></i> Laporan</a></li>
+            <li><a href="<?php echo site_url() ?>/laporan"><i class="fa fa-circle-o"></i> Laporan Peserta</a></li>
+            <li><a href="<?php echo site_url() ?>/laporan/selesaiujian"><i class="fa fa-circle-o"></i> Laporan Selesai Ujian</a></li>
           </ul>
         </li>
          <li class=" treeview">

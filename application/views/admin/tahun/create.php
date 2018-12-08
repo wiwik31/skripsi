@@ -16,7 +16,7 @@
 											<span>Tahun : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="date['Y']" name="tahun" class="form-control" style="font-size: 12px;">
+											<input type="date" name="tahun" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
 									<br>

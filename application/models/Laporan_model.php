@@ -3,9 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Laporan_model extends CI_Model {
 
+	function cari($berdasarkan,$yangdicari){
+		$this->db->from("peserta");
+		$this->db->like($berdasarkan,$yangdicari);
+		return $this->db->get();
+	}
+
 	public function daftarLaporan(){
 		return $this->db->get('laporan')->result();
 	}
+
+	// public function daftarpeserta){
+	// 	return $this->db->get('peserta')->result();
+	// }
 	
 	// public function daftarLaporan(){
 	// 	return $this->db->query("SELECT *, laporan.id as pid FROM laporan JOIN peserta on peserta.id = laporan.id_peserta")->result_array();
@@ -24,6 +34,14 @@ class Laporan_model extends CI_Model {
 						->result_array();
 				}	
 		
+
+	public function daftarUjian(){
+			return $this->db->select('*')
+						->from('ujian as a')
+						->join('peserta as b', 'b.id=a.id_peserta')
+						->get()
+						->result();
+		}
 
 	public function insert(){
 		$terdaftar = $this->input->post('terdaftar');

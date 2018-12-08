@@ -74,7 +74,7 @@
 								</tr> 
 								<tr>
 									<td> <br><br>
-									<center style="height: 1px;"><?php echo $panitia['nama_panitia'] ?></center>
+									<center style="height: 1px;">PANITIA</center>
 									_______________________
 								</td>
 								</tr>
