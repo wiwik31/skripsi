@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Nov 2018 pada 14.42
+-- Waktu pembuatan: 16 Des 2018 pada 16.06
 -- Versi server: 10.1.33-MariaDB
 -- Versi PHP: 7.2.6
 
@@ -91,8 +91,7 @@ CREATE TABLE `jurusan` (
 --
 
 INSERT INTO `jurusan` (`id`, `kode`, `jurusan`, `jumlah_peserta`) VALUES
-(1, '030', 'Sistem Komputer (S2)', 1),
-(2, '030', 'Sistem Komputer (S1)', 15),
+(2, '030', 'Sistem Komputer', 15),
 (3, '020', 'Teknik Informatika', 21),
 (4, '040', 'Sistem Informasi ', 50),
 (6, '032', 'Komputerisasi Akuntansi', 122),
@@ -190,13 +189,14 @@ CREATE TABLE `peserta` (
 --
 
 INSERT INTO `peserta` (`id`, `kode_pendaftaran`, `nama_peserta`, `id_jurusan`, `id_jurusan2`, `id_panitia`, `id_jadwal`, `jenkel`, `tgl_lahir`, `alamat`, `no_telp`, `email`, `username`, `password`, `tahun`, `status`) VALUES
-(13, 'KD-AB2EA9', 'Peserta 1', 3, 1, 1, 1, 'L', '0111-01-31', 'Makassar', '082395485655', 'peserta1@gmail.com', 'peserta1', '1ee0cc35596be8e4219c7241ece2195e', 2018, '1'),
+(13, 'KD-AB2EA9', 'Peserta 1', 3, 6, 1, 1, 'L', '0111-01-31', 'Makassar', '082395485655', 'peserta1@gmail.com', 'peserta1', '1ee0cc35596be8e4219c7241ece2195e', 2018, '1'),
 (14, 'KD-ABDDB1', 'Peserta 2', 3, 1, 3, 3, 'L', '0000-00-00', 'Bantaeng', '081542365444', 'peserta2@gmail.com', 'Peserta2', 'b77af8c8a2065a5dfb41ec9cdb62b136', 0000, '1'),
 (15, 'KD-E6CC9B', 'Peserta 3', 2, 3, 2, 1, 'L', '1983-01-31', 'Makassar', '089456215888', 'peserta3@gmail.com', 'Peserta3', '5ee44cb1e528e875490589d6fb82d1fe', 0000, '1'),
 (16, 'KD-897E78', 'peserta4', 2, 3, 3, 3, 'L', '1221-12-12', 'Jakarta', '082354975888', 'peserta4@gmail.com', 'peserta4', '2c3278404abe17dc9e479782563d8cab', 0000, '1'),
 (17, 'KD-FA2356', 'Peserta 5', 3, 4, 2, 2, 'P', '1993-01-31', 'Makassar', '0823954755888', 'peserta5@gmail.com', 'peserta5', 'be3339c50f87d29a075f5af5a52adfb9', 0000, '1'),
 (18, 'KD-8185E1', 'Peserta6', 2, 2, 4, 2, 'L', '1997-01-31', 'Jeneponto', '082393776124', 'peserta6@gmail.com', 'peserta6', '7707f58edba632fe00fb47e94ba19489', 2010, '1'),
-(19, 'KD-1C75A4', 'Wiwik', 1, 4, 2, 2, 'L', '1997-01-31', 'Perintis', '082395445666', 'wiwik@gmail.com', 'wiwik', '0fd1ec5593cd341c7c4af53276f10be6', 2019, '1');
+(19, 'KD-1C75A4', 'Wiwik', 1, 4, 2, 2, 'L', '1997-01-31', 'Perintis', '082395445666', 'wiwik@gmail.com', 'wiwik', '0fd1ec5593cd341c7c4af53276f10be6', 2019, '1'),
+(20, 'KD-119F50', 'qq', 4, 4, 4, 2, 'L', '0002-02-22', '22', '22', 'q@gmail.com', 'q', '7694f4a66316e53c8cdd9d9954bd611d', 2019, '1');
 
 -- --------------------------------------------------------
 
@@ -408,11 +408,8 @@ CREATE TABLE `ujian` (
 --
 
 INSERT INTO `ujian` (`id_ujian`, `id_peserta`, `id_panitia`, `id_jadwal`, `j_benar`, `j_salah`, `nilai`, `status`) VALUES
-(38, 13, 0, 0, 0, 1, 0, '0'),
-(39, 18, 0, 0, 1, 0, 3, '0'),
-(41, 17, 0, 0, 0, 1, 0, '0'),
-(42, 16, 0, 0, 1, 13, 3, '0'),
-(43, 19, 0, 0, 2, 0, 7, '0');
+(47, 15, 0, 0, 0, 1, 0, '0'),
+(48, 16, 0, 0, 0, 0, 0, '0');
 
 --
 -- Indexes for dumped tables
@@ -523,13 +520,13 @@ ALTER TABLE `panitia`
 -- AUTO_INCREMENT untuk tabel `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `soal`
 --
 ALTER TABLE `soal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT untuk tabel `tahun`
@@ -541,7 +538,7 @@ ALTER TABLE `tahun`
 -- AUTO_INCREMENT untuk tabel `ujian`
 --
 ALTER TABLE `ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
