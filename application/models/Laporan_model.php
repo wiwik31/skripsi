@@ -3,12 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Laporan_model extends CI_Model {
 
-	function cari($berdasarkan,$yangdicari){
-		$this->db->from("peserta");
-		$this->db->like($berdasarkan,$yangdicari);
-		return $this->db->get();
-	}
-
 	public function daftarLaporan(){
 		return $this->db->get('laporan')->result();
 	}
