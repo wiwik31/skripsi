@@ -173,11 +173,23 @@ class Soal extends CI_Controller {
 	}
 
 	public function cetak($id){
+		// $data['peserta'] = $this->Peserta_model->getById($id);
+		// $data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
+		// $data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
+		// $data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
+		// $data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
+
+		$jurusan = $this->Peserta_model->getById($id);
+		$jadwal = $this->Peserta_model->getById($id);
+		$panitia = $this->Peserta_model->getById($id);
+
+		$data['hasil'] = $this->checkHasil($id);
 		$data['peserta'] = $this->Peserta_model->getById($id);
-		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
-		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
-		$data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
-		$data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
+		$data['jurusan'] = $this->Jurusan_model->getById($jurusan['id_jurusan']);
+		$data['jurusan2'] = $this->Jurusan_model->getById($jurusan['id_jurusan2']);
+		$data['jadwal'] = $this->Jadwal_model->getById($jadwal['id_jadwal']);
+		$data['panitia'] = $this->Panitia_model->getById($panitia['id_panitia']);
+
 		$data['contents'] = 'peserta/hasilujian'; 
 		$data['title'] = 'Hasil Ujian Online | Peserta';
 		$this->load->view('templates/peserta/app', $data);

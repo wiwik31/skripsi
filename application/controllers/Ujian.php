@@ -52,24 +52,50 @@ class Ujian extends CI_Controller {
 	}
 
 	public function cetak($id){
+		// $data = array(
+		// 		'hasil'=> $this->checkHasil($id),
+		// 		'peserta' =>$this->Peserta_model->getById($id),
+		// 		'jurusan' =>$this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan'],
+		// 		'jurusan2' => $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']),
+		// 		'jadwal' =>  $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']),
+		// 		'panitia' => $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']),
+		// 		'contents' => 'admin/ujian/cetak',
+		// 	);
+
+		$jurusan = $this->Peserta_model->getById($id);
+		$jadwal = $this->Peserta_model->getById($id);
+		$panitia = $this->Peserta_model->getById($id);
+
 		$data['hasil'] = $this->checkHasil($id);
 		$data['peserta'] = $this->Peserta_model->getById($id);
-		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
-		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
-		$data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
-		$data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
+		$data['jurusan'] = $this->Jurusan_model->getById($jurusan['id_jurusan']);
+		$data['jurusan2'] = $this->Jurusan_model->getById($jurusan['id_jurusan2']);
+		$data['jadwal'] = $this->Jadwal_model->getById($jadwal['id_jadwal']);
+		$data['panitia'] = $this->Panitia_model->getById($panitia['id_panitia']);
 		$data['contents'] = 'admin/ujian/cetak'; 
 		$this->load->view('templates/admin/index', $data);
 
 	}
 
 	public function hasilujian($id){
+		// $data['hasil'] = $this->checkHasil($id);
+		// $data['peserta'] = $this->Peserta_model->getById($id);
+		// $data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
+		// $data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
+		// $data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
+		// $data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
+
+		$jurusan = $this->Peserta_model->getById($id);
+		$jadwal = $this->Peserta_model->getById($id);
+		$panitia = $this->Peserta_model->getById($id);
+
 		$data['hasil'] = $this->checkHasil($id);
 		$data['peserta'] = $this->Peserta_model->getById($id);
-		$data['jurusan'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan']);
-		$data['jurusan2'] = $this->Jurusan_model->getById($this->Peserta_model->getById($id)['id_jurusan2']);
-		$data['jadwal'] = $this->Jadwal_model->getById($this->Peserta_model->getById($id)['id_jadwal']);
-		$data['panitia'] = $this->Panitia_model->getById($this->Peserta_model->getById($id)['id_panitia']);
+		$data['jurusan'] = $this->Jurusan_model->getById($jurusan['id_jurusan']);
+		$data['jurusan2'] = $this->Jurusan_model->getById($jurusan['id_jurusan2']);
+		$data['jadwal'] = $this->Jadwal_model->getById($jadwal['id_jadwal']);
+		$data['panitia'] = $this->Panitia_model->getById($panitia['id_panitia']);
+		
 		$data['contents'] = 'admin/ujian/hasilujian'; 
 		$data['title'] = 'USPMB | Hasil Ujian'; 
 		$this->load->view('templates/peserta/app', $data);

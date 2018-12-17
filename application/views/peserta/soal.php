@@ -1,3 +1,18 @@
+       <style>
+           
+           .mydivs {
+                height:300px;
+            }
+            .mydivs>div {
+                height:100%;
+                overflow-y:auto;
+                border:5px solid #ff0;
+                padding:1em;
+                box-sizing:border-box;
+                -moz-box-sizing:border-box;
+}
+       </style>
+
         <div class="row clearfix">
                 <!-- Task Info -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -26,26 +41,32 @@
                             <div class="soal" style="display:none;" >
                                 <form action="<?php echo site_url().'soal/cekJawaban' ?>" name="form" id="form1" method="POST" >
                                     <?php $no = 1; foreach($data as $soal) : ?>
-                                    <input type="hidden" name="id[]" value="<?php echo $soal->id ?>">
+                                    <div class="divs">
+                                        <div>
+                                            <input type="hidden" name="id[]" value="<?php echo $soal->id ?>">
 
-                                    <?php echo $no++ .'.'. $soal->pertanyaan ?><br>
-                                    <div class="form-group">
-                                        <div class="demo-radio-button ">
-                                            <input class="with-gap" id="radio_1[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="A" >
-                                            <label for="radio_1[<?php echo $soal->id ?>]"><?php echo 'A. '.$soal->a ?></label><br>
-                                            <input class="with-gap" id="radio_2[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="B" >
-                                            <label for="radio_2[<?php echo $soal->id ?>]"><?php echo 'B. '.$soal->b ?></label><br>
-                                            <input class="with-gap" id="radio_3[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="C" >
-                                            <label for="radio_3[<?php echo $soal->id ?>]"><?php echo 'C. '.$soal->c ?></label><br>
-                                            <input class="with-gap" id="radio_4[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="D" >
-                                            <label for="radio_4[<?php echo $soal->id ?>]"><?php echo 'D. '.$soal->d ?></label><br>
-                                            <input class="with-gap" id="radio_5[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="E" >
-                                            <label for="radio_5[<?php echo $soal->id ?>]"><?php echo 'E. '.$soal->e ?></label><br>
+                                            <?php echo $no++ .'.'. $soal->pertanyaan ?><br>
+                                                    <input class="with-gap" id="radio_1[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="A" >
+                                                    <label for="radio_1[<?php echo $soal->id ?>]"><?php echo 'A. '.$soal->a ?></label><br>
+                                                    <input class="with-gap" id="radio_2[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="B" >
+                                                    <label for="radio_2[<?php echo $soal->id ?>]"><?php echo 'B. '.$soal->b ?></label><br>
+                                                    <input class="with-gap" id="radio_3[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="C" >
+                                                    <label for="radio_3[<?php echo $soal->id ?>]"><?php echo 'C. '.$soal->c ?></label><br>
+                                                    <input class="with-gap" id="radio_4[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="D" >
+                                                    <label for="radio_4[<?php echo $soal->id ?>]"><?php echo 'D. '.$soal->d ?></label><br>
+                                                    <input class="with-gap" id="radio_5[<?php echo $soal->id ?>]" type="radio" name="pilihan[<?php echo $soal->id ?>]" value="E" >
+                                                    <label for="radio_5[<?php echo $soal->id ?>]"><?php echo 'E. '.$soal->e ?></label><br>
+                                            <hr>
+
                                         </div>
                                     </div>
-                                    <hr>
+                                        
+                                   
                                     <?php endforeach ?>
+                                       
                                     <div class="form-group">
+                                    <a  class="btn btn-primary btn-sm" name="prev">Kembali</a>
+                                        <a  class="btn btn-primary btn-sm" name="next">Berikutnya</a>
                                         <button type="submit" name="prosess" class="btn btn-primary"  onclick="return confirm('Apakah Anda yakin dengan jawaban Anda?')">Proses</button>
                                     </div>
                                 </form>
@@ -81,6 +102,49 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
+            var divs = $('.divs>div');
+            var now = 0; // currently shown div
+            divs.hide().first().show();
+            divs.each(function(e) {
+                if (e != 0)
+                    $(this).hide();
+            });
+            $("a[name=next]").click(function (e) {
+                divs.eq(now).hide();
+                now = (now + 1 < divs.length) ? now + 1 : 0;
+                divs.eq(now).show(); // show next
+            });
+            $("a[name=prev]").click(function (e) {
+                divs.eq(now).hide();
+                now = (now > 0) ? now - 1 : divs.length - 1;
+                divs.eq(now).show(); // or .css('display','block');
+                //console.log(divs.length, now);
+            });
+
+            //  $(".divs div").each(function(e) {
+            //         if (e != 0)
+            //             $(this).hide();
+            //     });
+                
+            //     $("#next").click(function(){
+            //         if ($(".divs div:visible").next().length != 0)
+            //             $(".divs div:visible").next().show().prev().hide();
+            //         else {
+            //             $(".divs div:visible").hide();
+            //             $(".divs div:first").show();
+            //         }
+            //         return false;
+            //     });
+
+            //     $("#prev").click(function(){
+            //         if ($(".divs div:visible").prev().length != 0)
+            //             $(".divs div:visible").prev().show().next().hide();
+            //         else {
+            //             $(".divs div:visible").hide();
+            //             $(".divs div:last").show();
+            //         }
+            //         return false;
+            //     });
 
 
         $('.childmenu').attr('href', "#").attr('disabled', true);

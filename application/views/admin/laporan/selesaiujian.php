@@ -1,3 +1,36 @@
+<?php 
+function checkHasil($id){
+		$ci =& get_instance();
+		$check = $ci->db->query(" SELECT * FROM ujian WHERE id_peserta = '$id' ")->row();
+	 	if (!$check) {
+	 		return 'gaada';
+	 	}
+	 	
+	 	$peserta = $ci->db->query("SELECT * FROM peserta where id='$id' ")->row();
+
+		$arr = array(); 
+	  	if ($check->nilai >=50) {
+			$checkJurusan = $ci->db->query("SELECT * FROM jurusan WHERE id ='$peserta->id_jurusan' ")->row();
+	  		$arr = array(
+	  			'nilai'=>$check->nilai,
+	  			'jurusan'=> $checkJurusan->jurusan
+	  		);
+	    }else{
+	    	$checkJurusan = $ci->db->query("SELECT * FROM jurusan WHERE id ='$peserta->id_jurusan2' ")->row();
+	  		$arr =array(
+	  			'nilai'=>$check->nilai,
+	  			'jurusan'=> $checkJurusan->jurusan
+	  		);
+	    }
+
+	    // var_dump(array('hasil'=>$arr));exit;
+
+	    return $arr;
+		
+	}
+
+ ?>
+
 <div class="row box" id="printTable">
 	<div class="col-md-12 col-sm-12 col-xs-12 ">
 		<div class="box-header">
@@ -69,7 +102,11 @@
 							<td><?php echo $data->j_benar ?></td>
 							<td><?php echo $data->j_salah ?></td>
 							<td><?php echo $data->nilai ?></td>
-							<td><?php echo $data->nilai ?></td>
+							<td><?php
+								$j = checkHasil($data->id_peserta);
+								echo $j['jurusan'];
+
+							 ?></td>
 							<td>
 								<?php
 									if ($data->status==1) {
