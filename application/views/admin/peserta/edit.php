@@ -169,7 +169,7 @@
 											<span >Password : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="password" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['password'] ?>" >
+											<input type="password" name="password" class="form-control " style="font-size: 12px;" value="<?php echo $peserta['password'] ?>" >
 										</div>
 									</div>
 									<div class="row">

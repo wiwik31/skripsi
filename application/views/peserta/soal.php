@@ -65,9 +65,9 @@
                                     <?php endforeach ?>
                                        
                                     <div class="form-group">
-                                    <a  class="btn btn-primary btn-sm" name="prev">Kembali</a>
-                                        <a  class="btn btn-primary btn-sm" name="next">Berikutnya</a>
-                                        <button type="submit" name="prosess" class="btn btn-primary"  onclick="return confirm('Apakah Anda yakin dengan jawaban Anda?')">Proses</button>
+                                    <a  class="btn btn-primary btn-sm" name="prev"><b style="font-size: 15PX;">KEMBALI</b></a> | 
+                                        <a  class="btn btn-primary btn-sm" name="next"><b style="font-size: 15PX;">BERIKUTNYA</b></a> <br> <br>
+                                        <button type="submit" name="prosess" class="btn btn-block btn-danger"  onclick="return confirm('Apakah Anda yakin dengan jawaban Anda?')"><b style="font-size: 15PX;">PROSES</b></button>
                                     </div>
                                 </form>
                             </div>

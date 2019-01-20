@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Sign In | Bootstrap Based Admin Template - Material Design</title>
+    <title>USPMB | STMIK HANDAYANI</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -31,14 +31,14 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Login<b>Peserta</b></a>
+            <a href="javascript:void(0);">Login<b> Peserta</b></a>
             <!-- <small>Admin BootStrap Based - Material Design</small> -->
         </div>
         <div class="card">
             <div class="body">
                 <?php  echo form_open('login_peserta/login', array('id'=>'sign_in')) ?>
 
-                    <div class="msg">Sign in to start your session</div>
+                    <div class="msg">Silahkan login untuk masuk ke sistem</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -61,7 +61,7 @@
                             <label for="rememberme">Remember Me</label>
                         </div> -->
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" name="submit" type="submit">SIGN IN</button>
+                            <button class="btn btn-block bg-pink waves-effect" name="submit" type="submit">Login</button>
                         </div>
                     </div>
                     
@@ -94,6 +94,12 @@
     <!-- Custom Js -->
     <script src="<?php echo site_url()?>template_for_peserta/js/admin.js"></script>
     <script src="<?php echo site_url()?>template_for_peserta/js/pages/examples/sign-in.js"></script>
-</body>
-
+</body> 
 </html>
+
+<br><br><br> <br> <br> <br> <br> 
+<p>
+
+    <center>&copy;<?php $tanggal=getdate(); echo $tanggal['year'] ?> STMIK Handayani Makassar | Dev By Wiwik</center>
+
+</p>

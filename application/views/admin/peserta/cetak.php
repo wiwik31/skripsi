@@ -19,12 +19,12 @@
 									<td>1. Peserta ujian wajib hadir 15 menit sebelum ujian dimulai</td>
 								</tr> 
 								<tr>
-									<td>Pilihan Prodi 1</td>
+									<td>Prodi 1</td>
 									<td>: <?php echo  $peserta['id_jurusan'] == $jurusan['id'] ?  $jurusan['jurusan'] : ''  ?></td>
 									<td>2. Memakai pakaian rapi</td>
 								</tr> 
 								<tr>
-									<td>Pilihan Prodi 2</td>
+									<td>Prodi 2</td>
 									<td>: <?php echo  $peserta['id_jurusan2'] == $jurusan2['id'] ?  $jurusan2['jurusan'] : ''  ?></td>
 									<td>3. Peserta ujian diharuskan menggunakan sepatu</td>
 								</tr>

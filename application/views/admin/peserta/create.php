@@ -161,7 +161,7 @@
 											<span>Password: </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="password" class="form-control" style="font-size: 12px;">
+											<input type="password" name="password" class="form-control" style="font-size: 12px;">
 										</div>
 									</div>
 									<div class="row">

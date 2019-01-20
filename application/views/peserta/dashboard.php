@@ -20,10 +20,12 @@
                         <div class="body">
                             <p></p>
                             <p><h3>Peraturan ujian online</h3></p>
-                            <ol>
+                            <ol style="font-size: 20px;">
                                 <li>Tidak mereset atau merefresh soal ujian saat sedang ujian</li>
                                 <li>Ujian hanya dilakukan 1 kali, maka gunakan sebaik-baik mungkin</li>
-                                <li>Setelah Ujian, bagian bawah halaman ini akant tersedia tombol untuk <b style="color: red">MELIHAT HASIL UJIAN</b></li>
+                                <li>Setelah Ujian, bagian bawah halaman ini akan tersedia tombol untuk <b style="color: red">MELIHAT HASIL UJIAN</b></li>
+                                <li>Menekan tombol <b style="color: red">PROSES</b>  maka jawaban anda akan disimpan dan dihitung.</li>
+                                <li>Silahkan mengikuti arahan panitia untuk memulai ujian</li>
                             </ol>
                             <!-- <p><strong> Selamat ujian</strong></p> -->
 
